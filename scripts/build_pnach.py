@@ -125,7 +125,7 @@ def write_hex_dump(data: bytes, base: int, out_path: Path) -> None:
         chunk = data[offset : offset + 4]
         while len(chunk) < 4:
             chunk += b"\x00"
-        word = struct.unpack(">I", chunk)[0]
+        word = struct.unpack("<I", chunk)[0]
         lines.append(f"{base + offset:08X}: {word:08X}\n")
     out_path.write_text("".join(lines), encoding="utf-8")
 
@@ -154,7 +154,7 @@ def emit_pnach(
         chunk = data[offset : offset + 4]
         while len(chunk) < 4:
             chunk += b"\x00"
-        word = struct.unpack(">I", chunk)[0]
+        word = struct.unpack("<I", chunk)[0]
         addr = cave_base + offset
         lines.append(
             f"patch=1,EE,{encode_extended_addr(addr, 4)},extended,{word:08X}\n"
