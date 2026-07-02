@@ -1,0 +1,12 @@
+gametitle=Kingdom Hearts Final Mix [English Patched] (BD3FB233)
+
+[KH1 Custom Config Menu PoC]
+author=KH1-Custom-Menu-Poc
+description=Hook config options menu handler; custom rows + scrollbar PoC
+
+// --- Hook: redirect options menu handler pointer ---
+patch=2,EE,203F4C90,extended,01800000
+
+// --- Code cave payload (boot-time write) ---
+patch=0,EE,21800000,extended,00006008
+patch=0,EE,21800004,extended,00000000
