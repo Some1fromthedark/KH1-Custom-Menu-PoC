@@ -1,0 +1,8 @@
+{
+	"hooks": [
+		{
+			"address": "0x003F4C90",
+            "symbol": "custom_config_options_handler"
+		}
+	]
+}

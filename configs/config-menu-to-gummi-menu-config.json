@@ -1,0 +1,8 @@
+{
+	"hooks": [
+		{
+			"address": "0x003F4C90",
+            "symbol": "cave_items_gummi_handler"
+		}
+	]
+}

@@ -11,6 +11,7 @@
         .set noat
 
         .globl cave_entry
+        .globl cave_options_handler
 
 cave_entry:
 .include "asm/options_handler_vanilla_port.s"
