@@ -1,0 +1,26 @@
+                             ConfigMenuOptionsCallbacks                      XREF[2]:     ConfigMenuOnFrame:0021ac58(*), 
+                                                                                          SetUpConfigMenu?:0021ad24(*)  
+        003f4c90 98 9f 21        MenuCallbacks
+                 00 00 00 
+                 00 00 04 
+           003f4c90 98 9f 21 00     void fun  ConfigMenuOptionsOnFrame pOnFrame                          XREF[2]:     ConfigMenuOnFrame:0021ac58(*), 
+                                                                                                                     SetUpConfigMenu?:0021ad24(*)  
+           003f4c94 00 00 00 00     void fun  00000000                pOnClose
+           003f4c98 04 00 00 00     uint      4h                      field2_0x8
+           003f4c9c 00 00           short     0h                      field3_0xc
+           003f4c9e 00 00           short     0h                      field4_0xe
+           003f4ca0 00 02           short     200h                    field5_0x10
+           003f4ca2 80 01           short     180h                    field6_0x12
+           003f4ca4 0b 00           short     Bh                      field7_0x14
+           003f4ca6 47 00           short     47h                     field8_0x16
+           003f4ca8 8e 00           short     8Eh                     field9_0x18
+           003f4caa 1c 00           short     1Ch                     field10_0x1a
+           003f4cac 02 00           short     2h                      field11_0x1c
+           003f4cae 08 00           undefined20008h                   field12_0x1e
+           003f4cb0 08 00           undefined20008h                   field13_0x20
+           003f4cb2 00              ??        00h                     field14_0x22
+           003f4cb3 00              ??        00h                     field15_0x23
+           003f4cb4 00              ??        00h                     field16_0x24
+           003f4cb5 00              ??        00h                     field17_0x25
+           003f4cb6 00              ??        00h                     field18_0x26
+           003f4cb7 00              ??        00h                     field19_0x27

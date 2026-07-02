@@ -1,0 +1,531 @@
+                             **************************************************************
+                             *                          FUNCTION                          *
+                             **************************************************************
+                             undefined __stdcall ItemsStockMenuOnFrame(MenuHandle * h
+             undefined         <UNASSIGNED>   <RETURN>
+             MenuHandle *      a0_lo:4        handle
+             undefined8        Stack[-0x8]:8  local_8                                 XREF[2]:     0020f55c(W), 
+                                                                                                   0020fbd4(R)  
+             undefined8        Stack[-0x10]:8 local_10                                XREF[2]:     0020f558(W), 
+                                                                                                   0020fbd0(R)  
+             undefined8        Stack[-0x18]:8 local_18                                XREF[2]:     0020f554(W), 
+                                                                                                   0020fbcc(R)  
+             undefined8        Stack[-0x20]:8 local_20                                XREF[2]:     0020f550(W), 
+                                                                                                   0020fbc8(R)  
+             undefined8        Stack[-0x28]:8 local_28                                XREF[2]:     0020f534(W), 
+                                                                                                   0020fbc4(R)  
+             undefined8        Stack[-0x30]:8 local_30                                XREF[2]:     0020f54c(W), 
+                                                                                                   0020fbc0(R)  
+             undefined8        Stack[-0x38]:8 local_38                                XREF[2]:     0020f548(W), 
+                                                                                                   0020fbbc(R)  
+             undefined8        Stack[-0x40]:8 local_40                                XREF[2]:     0020f544(W), 
+                                                                                                   0020fbb8(R)  
+             undefined8        Stack[-0x48]:8 local_48                                XREF[2]:     0020f540(W), 
+                                                                                                   0020fbb4(R)  
+             undefined8        Stack[-0x50]:8 local_50                                XREF[2]:     0020f53c(W), 
+                                                                                                   0020fbb0(R)  
+             undefined4        Stack[-0x54]:4 local_54                                XREF[4]:     0020f580(W), 
+                                                                                                   0020f5a4(W), 
+                                                                                                   0020f6b0(R), 
+                                                                                                   0020fb0c(R)  
+             undefined4        Stack[-0x58]:4 local_58                                XREF[6]:     0020f588(W), 
+                                                                                                   0020f5ac(W), 
+                                                                                                   0020f5b8(R), 
+                                                                                                   0020f5c0(R), 
+                                                                                                   0020faf8(R), 
+                                                                                                   0020fb7c(R)  
+             undefined4        Stack[-0x5c]:4 local_5c                                XREF[6]:     0020f594(W), 
+                                                                                                   0020f5b4(W), 
+                                                                                                   0020f5d4(R), 
+                                                                                                   0020fae8(W), 
+                                                                                                   0020faec(R), 
+                                                                                                   0020fb94(R)  
+             undefined4        Stack[-0x60]:4 local_60                                XREF[2]:     0020fab4(W), 
+                                                                                                   0020fb2c(R)  
+             undefined4        Stack[-0x6c]:4 local_6c                                XREF[2]:     0020f790(W), 
+                                                                                                   0020f7a8(R)  
+             undefined4        Stack[-0x70]:4 local_70                                XREF[7]:     0020f73c(W), 
+                                                                                                   0020f758(R), 
+                                                                                                   0020f794(R), 
+                                                                                                   0020f7a4(R), 
+                                                                                                   0020f7b4(R), 
+                                                                                                   0020f83c(W), 
+                                                                                                   0020f854(R)  
+                             ItemsStockMenuOnFrame                           XREF[1]:     ItemsMenuLayer2OnFrame:0020fed4(
+        0020f530 90 ff bd 27     addiu      sp,sp,-0x70
+        0020f534 48 00 b5 ff     sd         s5,local_28(sp)
+        0020f538 2d a8 80 00     move       s5,handle
+        0020f53c 20 00 b0 ff     sd         s0,local_50(sp)
+        0020f540 28 00 b1 ff     sd         s1,local_48(sp)
+        0020f544 30 00 b2 ff     sd         s2,local_40(sp)
+        0020f548 38 00 b3 ff     sd         s3,local_38(sp)
+        0020f54c 40 00 b4 ff     sd         s4,local_30(sp)
+        0020f550 50 00 b6 ff     sd         s6,local_20(sp)
+        0020f554 58 00 b7 ff     sd         s7,local_18(sp)
+        0020f558 60 00 be ff     sd         s8,local_10(sp)
+        0020f55c 68 00 bf ff     sd         ra,local_8(sp)
+        0020f560 2c 00 a2 8e     lw         v0,0x2c(s5)
+        0020f564 02 00 42 28     slti       v0,v0,0x2
+        0020f568 0b 00 40 10     beq        v0,zero,LAB_0020f598
+        0020f56c 64 00 02 3c     _lui       v0,0x64
+        0020f570 64 00 02 3c     lui        v0,0x64
+        0020f574 64 00 03 3c     lui        v1,0x64
+        0020f578 88 13 42 8c     lw         v0,offset DAT_00641388(v0)                       = ??
+        0020f57c 90 13 63 24     addiu      v1,v1,0x1390
+        0020f580 1c 00 a3 af     sw         v1=>DAT_00641390,local_54(sp)                    = ??
+        0020f584 2d 90 00 00     move       s2,zero
+        0020f588 18 00 a2 af     sw         v0,local_58(sp)
+        0020f58c 08 00 02 24     li         v0,0x8
+        0020f590 09 00 00 10     b          LAB_0020f5b8
+        0020f594 14 00 a2 af     _sw        v0,local_5c(sp)
+                             LAB_0020f598                                    XREF[1]:     0020f568(j)  
+        0020f598 64 00 03 3c     lui        v1,0x64
+        0020f59c 98 17 63 24     addiu      v1,v1,0x1798
+        0020f5a0 90 17 42 8c     lw         v0,offset DAT_00641790(v0)                       = ??
+        0020f5a4 1c 00 a3 af     sw         v1=>DAT_00641798,local_54(sp)                    = ??
+        0020f5a8 07 00 03 24     li         v1,0x7
+        0020f5ac 18 00 a2 af     sw         v0,local_58(sp)
+        0020f5b0 01 00 12 24     li         s2,0x1
+        0020f5b4 14 00 a3 af     sw         v1,local_5c(sp)
+                             LAB_0020f5b8                                    XREF[1]:     0020f590(j)  
+        0020f5b8 18 00 a4 8f     lw         handle,local_58(sp)
+        0020f5bc 7c 01 80 10     beq        handle,zero,LAB_0020fbb0
+        0020f5c0 18 00 a5 8f     _lw        a1,local_58(sp)
+        0020f5c4 78 f5 07 0c     jal        InitMenuPages                                    undefined InitMenuPages(MenuHand
+        0020f5c8 2d 20 a0 02     _move      handle,s5
+        0020f5cc 2d 20 a0 02     move       handle,s5
+        0020f5d0 84 f5 07 0c     jal        set_handle_field168_0xce                         undefined set_handle_field168_0x
+        0020f5d4 14 00 a5 8f     _lw        a1,local_5c(sp)
+        0020f5d8 a2 f5 07 0c     jal        FUN_001fd688                                     undefined FUN_001fd688(MenuHandl
+        0020f5dc 2d 20 a0 02     _move      handle,s5
+        0020f5e0 ae d0 07 0c     jal        is_valid_handle                                  long is_valid_handle(MenuHandle 
+        0020f5e4 2d 20 a0 02     _move      handle,s5
+        0020f5e8 2b 01 40 10     beq        v0,zero,LAB_0020fa98
+        0020f5ec 42 00 02 3c     _lui       v0,0x42
+        0020f5f0 c8 5b 44 8c     lw         handle,offset MENU_INPUT_HANDLER_PTR(v0)         = 00000000
+        0020f5f4 08 00 83 8c     lw         v1,handle->field2_0x8(a0)
+        0020f5f8 00 40 63 30     andi       v1,v1,0x4000
+        0020f5fc 16 00 60 10     beq        v1,zero,LAB_0020f658
+        0020f600 00 00 00 00     _nop
+        0020f604 d6 cd 07 0c     jal        FUN_001f3758                                     undefined FUN_001f3758()
+        0020f608 2d 20 a0 02     _move      handle,s5
+        0020f60c da 75 04 0c     jal        PlaySound                                        undefined PlaySound()
+        0020f610 03 00 04 24     _li        handle,0x3
+        0020f614 04 00 40 16     bne        s2,zero,LAB_0020f628
+        0020f618 64 00 02 3c     _lui       v0,0x64
+        0020f61c 64 00 02 3c     lui        v0,0x64
+        0020f620 1d 01 00 10     b          LAB_0020fa98
+        0020f624 24 12 40 ac     _sw        zero,offset DISPLAYED_MENU_DEPTH(v0)             = ??
+                             LAB_0020f628                                    XREF[1]:     0020f614(j)  
+        0020f628 02 00 03 24     li         v1,0x2
+        0020f62c 38 12 44 8c     lw         handle,offset DAT_00641238(v0)                   = ??
+        0020f630 05 00 83 10     beq        handle,v1,LAB_0020f648
+        0020f634 64 00 03 3c     _lui       v1,0x64
+        0020f638 03 00 02 24     li         v0,0x3
+        0020f63c 16 01 00 10     b          LAB_0020fa98
+        0020f640 24 12 62 ac     _sw        v0,offset DISPLAYED_MENU_DEPTH(v1)               = ??
+        0020f644 00              ??         00h
+        0020f645 00              ??         00h
+        0020f646 00              ??         00h                                              ?  ->  00640000
+        0020f647 00              ??         00h
+                             LAB_0020f648                                    XREF[1]:     0020f630(j)  
+        0020f648 64 00 02 3c     lui        v0,0x64
+        0020f64c 12 01 00 10     b          LAB_0020fa98
+        0020f650 24 12 44 ac     _sw        handle,offset DISPLAYED_MENU_DEPTH(v0)           = ??
+        0020f654 00              ??         00h
+        0020f655 00              ??         00h
+        0020f656 00              ??         00h
+        0020f657 00              ??         00h
+                             LAB_0020f658                                    XREF[1]:     0020f5fc(j)  
+        0020f658 56 f8 07 0c     jal        FUN_001fe158                                     undefined FUN_001fe158()
+        0020f65c 2d 20 a0 02     _move      handle,s5
+        0020f660 2d 20 a0 02     move       handle,s5
+        0020f664 46 2f 08 0c     jal        FUN_0020bd18                                     undefined FUN_0020bd18(MenuHandl
+        0020f668 08 00 05 24     _li        a1,0x8
+        0020f66c 64 00 05 3c     lui        a1,0x64
+        0020f670 d0 00 a3 96     lhu        v1,0xd0(s5)
+        0020f674 64 00 06 3c     lui        a2,0x64
+        0020f678 64 00 07 3c     lui        a3,0x64
+        0020f67c 2d 20 a0 02     move       handle,s5
+        0020f680 00 1c 03 00     sll        v1,v1,0x10
+        0020f684 03 1d 03 00     sra        v1,v1,0x14
+        0020f688 60 12 a3 ac     sw         v1,offset DAT_00641260(a1)                       = ??
+        0020f68c d2 00 a2 96     lhu        v0,0xd2(s5)
+        0020f690 00 14 02 00     sll        v0,v0,0x10
+        0020f694 03 15 02 00     sra        v0,v0,0x14
+        0020f698 64 12 c2 ac     sw         v0,offset DAT_00641264(a2)                       = ??
+        0020f69c da 00 a3 96     lhu        v1,0xda(s5)
+        0020f6a0 00 1c 03 00     sll        v1,v1,0x10
+        0020f6a4 03 1d 03 00     sra        v1,v1,0x14
+        0020f6a8 52 f5 07 0c     jal        GetHandleGlobalSelectedRow                       undefined GetHandleGlobalSelecte
+        0020f6ac 68 12 e3 ac     _sw        v1,offset DAT_00641268(a3)                       = ??
+        0020f6b0 1c 00 a3 8f     lw         v1,local_54(sp)
+        0020f6b4 80 10 02 00     sll        v0,v0,0x2
+        0020f6b8 10 00 b1 8e     lw         s1,0x10(s5)
+        0020f6bc 21 10 43 00     addu       v0,v0,v1
+        0020f6c0 0a 00 20 12     beq        s1,zero,LAB_0020f6ec
+        0020f6c4 00 00 50 8c     _lw        s0,0x0(v0)=>DAT_00641390                         = ??
+        0020f6c8 05 00 00 12     beq        s0,zero,LAB_0020f6e0
+        0020f6cc 00 00 00 00     _nop
+        0020f6d0 b4 b9 07 0c     jal        FUN_001ee6d0                                     undefined FUN_001ee6d0()
+        0020f6d4 2d 20 00 02     _move      handle,s0
+        0020f6d8 04 00 00 10     b          LAB_0020f6ec
+        0020f6dc 40 00 22 ae     _sw        v0,0x40(s1)
+                             LAB_0020f6e0                                    XREF[1]:     0020f6c8(j)  
+        0020f6e0 ee be 07 0c     jal        GET_ELF_TEXT_STR                                 undefined GET_ELF_TEXT_STR(undef
+        0020f6e4 98 00 04 24     _li        handle,0x98
+        0020f6e8 40 00 22 ae     sw         v0,0x40(s1)
+                             LAB_0020f6ec                                    XREF[2]:     0020f6c0(j), 0020f6d8(j)  
+        0020f6ec 68 f9 07 0c     jal        FUN_001fe5a0                                     undefined FUN_001fe5a0(MenuHandl
+        0020f6f0 2d 20 a0 02     _move      handle,s5
+        0020f6f4 e9 00 40 50     beql       v0,zero,LAB_0020fa9c
+        0020f6f8 2d 20 a0 02     _move      handle,s5
+        0020f6fc 1a d1 07 0c     jal        FUN_001f4468                                     undefined FUN_001f4468()
+        0020f700 2d 20 a0 02     _move      handle,s5
+        0020f704 2e 00 40 16     bne        s2,zero,LAB_0020f7c0
+        0020f708 2d 88 40 00     _move      s1,v0
+        0020f70c da 75 04 0c     jal        PlaySound                                        undefined PlaySound()
+        0020f710 02 00 04 24     _li        handle,0x2
+        0020f714 2d 20 a0 02     move       handle,s5
+        0020f718 56 cf 07 0c     jal        FUN_001f3d58                                     undefined FUN_001f3d58()
+        0020f71c 05 00 05 24     _li        a1,0x5
+        0020f720 d6 cd 07 0c     jal        FUN_001f3758                                     undefined FUN_001f3758()
+        0020f724 2d 20 a0 02     _move      handle,s5
+        0020f728 3f 00 04 3c     lui        handle,0x3f
+        0020f72c c0 39 84 24     addiu      handle=>ItemsMenuLayer3Callbacks,handle,0x39c0
+        0020f730 6a cc 07 0c     jal        InstantiateMenu                                  undefined InstantiateMenu(MenuCa
+        0020f734 06 00 05 24     _li        a1,0x6
+        0020f738 d7 00 40 10     beq        v0,zero,LAB_0020fa98
+        0020f73c 00 00 a2 af     _sw        v0,0x0(sp)=>local_70
+        0020f740 2d 20 40 00     move       handle,v0
+        0020f744 92 cf 07 0c     jal        FUN_001f3e48                                     undefined FUN_001f3e48()
+        0020f748 2d 28 20 02     _move      a1,s1
+        0020f74c 64 00 02 3c     lui        v0,0x64
+        0020f750 74 12 43 94     lhu        v1,offset DAT_00641274(v0)                       = ??
+        0020f754 3f 00 04 3c     lui        handle,0x3f
+        0020f758 00 00 a2 8f     lw         v0,0x0(sp)=>local_70
+        0020f75c 64 00 07 3c     lui        a3,0x64
+        0020f760 00 19 03 00     sll        v1,v1,0x4
+        0020f764 64 00 06 3c     lui        a2,0x64
+        0020f768 d2 00 43 a4     sh         v1,0xd2(v0)
+        0020f76c 64 00 03 3c     lui        v1,0x64
+        0020f770 02 00 02 24     li         v0,0x2
+        0020f774 80 39 84 24     addiu      handle=>ItemsMenuLayer3DescriptionCallbacks,ha
+        0020f778 06 00 05 24     li         a1,0x6
+        0020f77c 34 12 d0 ac     sw         s0,offset DAT_00641234(a2)                       = ??
+        0020f780 24 12 62 ac     sw         v0,offset DISPLAYED_MENU_DEPTH(v1)               = ??
+        0020f784 6a cc 07 0c     jal        InstantiateMenu                                  undefined InstantiateMenu(MenuCa
+        0020f788 30 12 f0 ac     _sw        s0,offset DAT_00641230(a3)                       = ??
+        0020f78c c2 00 40 10     beq        v0,zero,LAB_0020fa98
+        0020f790 04 00 a2 af     _sw        v0,local_6c(sp)
+        0020f794 00 00 a5 8f     lw         a1,0x0(sp)=>local_70
+        0020f798 92 cf 07 0c     jal        FUN_001f3e48                                     undefined FUN_001f3e48()
+        0020f79c 2d 20 40 00     _move      handle,v0
+        0020f7a0 46 f5 07 0c     jal        GetSelectedMenuRow                               undefined GetSelectedMenuRow(Men
+        0020f7a4 00 00 a4 8f     _lw        handle,0x0(sp)=>local_70
+        0020f7a8 04 00 a3 8f     lw         v1,local_6c(sp)
+        0020f7ac 24 00 62 ac     sw         v0,0x24(v1)
+        0020f7b0 70 cf 07 0c     jal        RegisterHandle?                                  undefined RegisterHandle?(MenuHa
+        0020f7b4 00 00 a4 8f     _lw        handle,0x0(sp)=>local_70
+        0020f7b8 b8 00 00 10     b          LAB_0020fa9c
+        0020f7bc 2d 20 a0 02     _move      handle,s5
+                             LAB_0020f7c0                                    XREF[1]:     0020f704(j)  
+        0020f7c0 64 00 13 3c     lui        s3,0x64
+        0020f7c4 ff ff 03 24     li         v1,-0x1
+        0020f7c8 28 12 72 26     addiu      s2,s3,0x1228
+        0020f7cc 00 00 42 8e     lw         v0,0x0(s2)=>DAT_00641228                         = ??
+        0020f7d0 b1 00 43 10     beq        v0,v1,LAB_0020fa98
+        0020f7d4 64 00 02 3c     _lui       v0,0x64
+        0020f7d8 01 00 04 24     li         handle,0x1
+        0020f7dc 38 12 43 8c     lw         v1,offset DAT_00641238(v0)                       = ??
+        0020f7e0 4f 00 64 14     bne        v1,handle,LAB_0020f920
+        0020f7e4 00 00 00 00     _nop
+        0020f7e8 78 ba 07 0c     jal        FUN_001ee9e0                                     undefined FUN_001ee9e0()
+        0020f7ec 2d 20 00 02     _move      handle,s0
+        0020f7f0 47 00 40 10     beq        v0,zero,LAB_0020f910
+        0020f7f4 64 00 12 3c     _lui       s2,0x64
+        0020f7f8 34 12 43 8e     lw         v1,offset DAT_00641234(s2)                       = ??
+        0020f7fc 18 00 60 10     beq        v1,zero,LAB_0020f860
+        0020f800 00 00 00 00     _nop
+        0020f804 30 00 04 3c     lui        handle,0x30
+        0020f808 e8 4b 82 8c     lw         v0,offset DAT_00304be8(handle->field0_0x0)
+        0020f80c 21 10 62 00     addu       v0,v1,v0
+        0020f810 99 04 43 90     lbu        v1,0x499(v0)
+        0020f814 63 00 63 2c     sltiu      v1,v1,0x63
+        0020f818 11 00 60 14     bne        v1,zero,LAB_0020f860
+        0020f81c 00 00 00 00     _nop
+        0020f820 da 75 04 0c     jal        PlaySound                                        undefined PlaySound()
+        0020f824 04 00 04 24     _li        handle,0x4
+        0020f828 3f 00 04 3c     lui        handle,0x3f
+        0020f82c e0 38 84 24     addiu      handle=>ItemsMenuNoEffectInfoCallbacks,handle,
+        0020f830 6a cc 07 0c     jal        InstantiateMenu                                  undefined InstantiateMenu(MenuCa
+        0020f834 06 00 05 24     _li        a1,0x6
+        0020f838 97 00 40 10     beq        v0,zero,LAB_0020fa98
+        0020f83c 00 00 a2 af     _sw        v0,0x0(sp)=>local_70
+        0020f840 2d 20 40 00     move       handle,v0
+        0020f844 92 cf 07 0c     jal        FUN_001f3e48                                     undefined FUN_001f3e48()
+        0020f848 2d 28 20 02     _move      a1,s1
+        0020f84c a1 00 05 24     li         a1,0xa1
+        0020f850 a4 36 08 0c     jal        FUN_0020da90                                     undefined FUN_0020da90()
+        0020f854 00 00 a4 8f     _lw        handle,0x0(sp)=>local_70
+        0020f858 90 00 00 10     b          LAB_0020fa9c
+        0020f85c 2d 20 a0 02     _move      handle,s5
+                             LAB_0020f860                                    XREF[2]:     0020f7fc(j), 0020f818(j)  
+        0020f860 da 75 04 0c     jal        PlaySound                                        undefined PlaySound()
+        0020f864 02 00 04 24     _li        handle,0x2
+        0020f868 2d 20 a0 02     move       handle,s5
+        0020f86c 56 cf 07 0c     jal        FUN_001f3d58                                     undefined FUN_001f3d58()
+        0020f870 05 00 05 24     _li        a1,0x5
+        0020f874 d6 cd 07 0c     jal        FUN_001f3758                                     undefined FUN_001f3758()
+        0020f878 2d 20 a0 02     _move      handle,s5
+        0020f87c 64 00 03 3c     lui        v1,0x64
+        0020f880 30 00 02 3c     lui        v0,0x30
+        0020f884 28 12 65 8e     lw         a1,offset DAT_00641228(s3)                       = ??
+        0020f888 e8 4b 48 24     addiu      t0=>DAT_00304be8,v0,0x4be8
+        0020f88c 64 00 02 3c     lui        v0,0x64
+        0020f890 00 00 07 8d     lw         a3,0x0(t0)=>DAT_00304be8
+        0020f894 64 00 06 3c     lui        a2,0x64
+        0020f898 48 12 50 ac     sw         s0,offset DAT_00641248(v0)                       = ??
+        0020f89c 44 12 70 ac     sw         s0,offset DAT_00641244(v1)                       = ??
+        0020f8a0 21 28 a7 00     addu       a1,a1,a3
+        0020f8a4 30 12 c4 8c     lw         handle,offset DAT_00641230(a2)                   = ??
+        0020f8a8 8e 04 a3 90     lbu        v1,0x48e(a1)
+        0020f8ac c0 10 03 00     sll        v0,v1,0x3
+        0020f8b0 23 10 43 00     subu       v0,v0,v1
+        0020f8b4 80 10 02 00     sll        v0,v0,0x2
+        0020f8b8 21 10 43 00     addu       v0,v0,v1
+        0020f8bc 80 10 02 00     sll        v0,v0,0x2
+        0020f8c0 21 20 82 00     addu       handle,handle,v0
+        0020f8c4 21 20 87 00     addu       handle,handle,a3
+        0020f8c8 26 00 90 a0     sb         s0,handle+0x26(a0)
+        0020f8cc 00 00 03 8d     lw         v1,0x0(t0)=>DAT_00304be8
+        0020f8d0 21 18 03 02     addu       v1,s0,v1
+        0020f8d4 99 04 63 24     addiu      v1,v1,0x499
+        0020f8d8 00 00 62 90     lbu        v0,0x0(v1)
+        0020f8dc ff 00 42 24     addiu      v0,v0,0xff
+        0020f8e0 00 00 62 a0     sb         v0,0x0(v1)
+        0020f8e4 34 12 42 8e     lw         v0,offset DAT_00641234(s2)                       = ??
+        0020f8e8 65 00 40 10     beq        v0,zero,LAB_0020fa80
+        0020f8ec 64 00 03 3c     _lui       v1,0x64
+        0020f8f0 00 00 03 8d     lw         v1,0x0(t0)=>DAT_00304be8
+        0020f8f4 21 18 43 00     addu       v1,v0,v1
+        0020f8f8 99 04 63 24     addiu      v1,v1,0x499
+        0020f8fc 00 00 62 90     lbu        v0,0x0(v1)
+        0020f900 01 00 42 24     addiu      v0,v0,0x1
+        0020f904 5d 00 00 10     b          LAB_0020fa7c
+        0020f908 00 00 62 a0     _sb        v0,0x0(v1)
+        0020f90c 00              ??         00h
+        0020f90d 00              ??         00h
+        0020f90e 00              ??         00h
+        0020f90f 00              ??         00h
+                             LAB_0020f910                                    XREF[1]:     0020f7f0(j)  
+        0020f910 da 75 04 0c     jal        PlaySound                                        undefined PlaySound()
+        0020f914 03 00 04 24     _li        handle,0x3
+        0020f918 60 00 00 10     b          LAB_0020fa9c
+        0020f91c 2d 20 a0 02     _move      handle,s5
+                             LAB_0020f920                                    XREF[1]:     0020f7e0(j)  
+        0020f920 78 ba 07 0c     jal        FUN_001ee9e0                                     undefined FUN_001ee9e0()
+        0020f924 2d 20 00 02     _move      handle,s0
+        0020f928 59 00 40 10     beq        v0,zero,LAB_0020fa90
+        0020f92c 00 00 00 00     _nop
+        0020f930 da 75 04 0c     jal        PlaySound                                        undefined PlaySound()
+        0020f934 02 00 04 24     _li        handle,0x2
+        0020f938 2d 20 a0 02     move       handle,s5
+        0020f93c 56 cf 07 0c     jal        FUN_001f3d58                                     undefined FUN_001f3d58()
+        0020f940 05 00 05 24     _li        a1,0x5
+        0020f944 d6 cd 07 0c     jal        FUN_001f3758                                     undefined FUN_001f3758()
+        0020f948 2d 20 a0 02     _move      handle,s5
+        0020f94c 64 00 05 3c     lui        a1,0x64
+        0020f950 30 00 03 3c     lui        v1,0x30
+        0020f954 00 00 44 8e     lw         handle,0x0(s2)=>DAT_00641228                     = ??
+        0020f958 e8 4b 67 24     addiu      a3,v1,0x4be8
+        0020f95c 64 00 03 3c     lui        v1,0x64
+        0020f960 00 00 e6 8c     lw         a2,0x0(a3)=>DAT_00304be8
+        0020f964 64 00 02 3c     lui        v0,0x64
+        0020f968 44 12 b0 ac     sw         s0,offset DAT_00641244(a1)                       = ??
+        0020f96c 48 12 50 ac     sw         s0,offset DAT_00641248(v0)                       = ??
+        0020f970 21 20 86 00     addu       handle,handle,a2
+        0020f974 30 12 65 8c     lw         a1,offset DAT_00641230(v1)                       = ??
+        0020f978 8e 04 83 90     lbu        v1,0x48e(handle->field0_0x0)
+        0020f97c c0 10 03 00     sll        v0,v1,0x3
+        0020f980 23 10 43 00     subu       v0,v0,v1
+        0020f984 80 10 02 00     sll        v0,v0,0x2
+        0020f988 21 10 43 00     addu       v0,v0,v1
+        0020f98c 80 10 02 00     sll        v0,v0,0x2
+        0020f990 21 20 c2 00     addu       handle,a2,v0
+        0020f994 21 28 a4 00     addu       a1,a1,handle
+        0020f998 04 00 86 24     addiu      a2,handle,0x4
+        0020f99c 26 00 b0 a0     sb         s0,0x26(a1)
+        0020f9a0 00 00 e3 8c     lw         v1,0x0(a3)=>DAT_00304be8
+        0020f9a4 21 18 03 02     addu       v1,s0,v1
+        0020f9a8 99 04 63 24     addiu      v1,v1,0x499
+        0020f9ac 00 00 62 90     lbu        v0,0x0(v1)
+        0020f9b0 ff 00 42 24     addiu      v0,v0,0xff
+        0020f9b4 00 00 62 a0     sb         v0,0x0(v1)
+        0020f9b8 21 00 c5 90     lbu        a1,0x21(a2)
+        0020f9bc 2f 00 a0 10     beq        a1,zero,LAB_0020fa7c
+        0020f9c0 2d 40 00 00     _move      t0,zero
+        0020f9c4 26 00 82 90     lbu        v0,handle+0x26(a0)
+        0020f9c8 19 00 40 54     bnel       v0,zero,LAB_0020fa30
+        0020f9cc 01 00 08 25     _addiu     t0,t0,0x1
+        0020f9d0 64 00 04 3c     lui        handle,0x64
+        0020f9d4 58 12 83 24     addiu      v1,handle,0x1258
+        0020f9d8 00 00 62 8c     lw         v0,0x0(v1)=>DAT_00641258                         = ??
+        0020f9dc 08 00 40 58     blezl      v0,LAB_0020fa00
+        0020f9e0 58 12 86 24     _addiu     a2,handle,0x1258
+        0020f9e4 64 00 02 3c     lui        v0,0x64
+        0020f9e8 23 00 00 10     b          LAB_0020fa78
+        0020f9ec 00 00 60 ac     _sw        zero,0x0(v1)=>DAT_00641258                       = ??
+                             LAB_0020f9f0                                    XREF[1]:     0020fa10(j)  
+        0020f9f0 64 00 02 3c     lui        v0,0x64
+        0020f9f4 21 00 00 10     b          LAB_0020fa7c
+        0020f9f8 5c 12 43 ac     _sw        v1,offset DAT_0064125c(v0)                       = ??
+        0020f9fc 00              ??         00h
+        0020f9fd 00              ??         00h
+        0020f9fe 00              ??         00h
+        0020f9ff 00              ??         00h
+                             LAB_0020fa00                                    XREF[2]:     0020f9dc(j), 0020fa68(j)  
+        0020fa00 00 00 c3 8c     lw         v1,0x0(a2)=>DAT_00641258                         = ??
+        0020fa04 21 10 68 00     addu       v0,v1,t0
+        0020fa08 2a 10 45 00     slt        v0,v0,a1
+        0020fa0c 00 00 00 00     nop
+        0020fa10 f7 ff 40 14     bne        v0,zero,LAB_0020f9f0
+        0020fa14 23 18 03 01     _subu      v1,t0,v1
+        0020fa18 f8 ff a2 24     addiu      v0,a1,-0x8
+        0020fa1c 64 00 04 3c     lui        handle,0x64
+        0020fa20 23 18 02 01     subu       v1,t0,v0
+        0020fa24 00 00 c2 ac     sw         v0,0x0(a2)=>DAT_00641258                         = ??
+        0020fa28 14 00 00 10     b          LAB_0020fa7c
+        0020fa2c 5c 12 83 ac     _sw        v1,offset DAT_0064125c(handle->field0_0x0)       = ??
+                             LAB_0020fa30                                    XREF[2]:     0020f9c8(j), 0020fa4c(j)  
+        0020fa30 2a 10 05 01     slt        v0,t0,a1
+        0020fa34 11 00 40 10     beq        v0,zero,LAB_0020fa7c
+        0020fa38 21 18 06 01     _addu      v1,t0,a2
+        0020fa3c 22 00 62 90     lbu        v0,0x22(v1)
+        0020fa40 00 00 00 00     nop
+        0020fa44 00 00 00 00     nop
+        0020fa48 00 00 00 00     nop
+        0020fa4c f8 ff 40 54     bnel       v0,zero,LAB_0020fa30
+        0020fa50 01 00 08 25     _addiu     t0,t0,0x1
+        0020fa54 64 00 02 3c     lui        v0,0x64
+        0020fa58 2d 20 40 00     move       handle,v0
+        0020fa5c 58 12 83 24     addiu      v1,handle,0x1258
+        0020fa60 00 00 62 8c     lw         v0,0x0(v1)=>DAT_00641258                         = ??
+        0020fa64 2a 10 02 01     slt        v0,t0,v0
+        0020fa68 e5 ff 40 50     beql       v0,zero,LAB_0020fa00
+        0020fa6c 58 12 86 24     _addiu     a2,handle,0x1258
+        0020fa70 64 00 02 3c     lui        v0,0x64
+        0020fa74 00 00 68 ac     sw         t0,0x0(v1)=>DAT_00641258                         = ??
+                             LAB_0020fa78                                    XREF[1]:     0020f9e8(j)  
+        0020fa78 5c 12 40 ac     sw         zero,offset DAT_0064125c(v0)                     = ??
+                             LAB_0020fa7c                                    XREF[5]:     0020f904(j), 0020f9bc(j), 
+                                                                                          0020f9f4(j), 0020fa28(j), 
+                                                                                          0020fa34(j)  
+        0020fa7c 64 00 03 3c     lui        v1,0x64
+                             LAB_0020fa80                                    XREF[1]:     0020f8e8(j)  
+        0020fa80 05 00 02 24     li         v0,0x5
+        0020fa84 04 00 00 10     b          LAB_0020fa98
+        0020fa88 24 12 62 ac     _sw        v0,offset DISPLAYED_MENU_DEPTH(v1)               = ??
+        0020fa8c 00              ??         00h
+        0020fa8d 00              ??         00h
+        0020fa8e 00              ??         00h
+        0020fa8f 00              ??         00h
+                             LAB_0020fa90                                    XREF[1]:     0020f928(j)  
+        0020fa90 da 75 04 0c     jal        PlaySound                                        undefined PlaySound()
+        0020fa94 03 00 04 24     _li        handle,0x3
+                             LAB_0020fa98                                    XREF[9]:     0020f5e8(j), 0020f620(j), 
+                                                                                          0020f63c(j), 0020f64c(j), 
+                                                                                          0020f738(j), 0020f78c(j), 
+                                                                                          0020f7d0(j), 0020f838(j), 
+                                                                                          0020fa84(j)  
+        0020fa98 2d 20 a0 02     move       handle,s5
+                             LAB_0020fa9c                                    XREF[4]:     0020f6f4(j), 0020f7b8(j), 
+                                                                                          0020f858(j), 0020f918(j)  
+        0020fa9c f0 0b 08 0c     jal        FUN_00202fc0                                     undefined FUN_00202fc0(MenuHandl
+        0020faa0 2d b0 00 00     _move      s6,zero
+        0020faa4 46 f5 07 0c     jal        GetSelectedMenuRow                               undefined GetSelectedMenuRow(Men
+        0020faa8 2d 20 a0 02     _move      handle,s5
+        0020faac 2d 20 a0 02     move       handle,s5
+        0020fab0 4e f5 07 0c     jal        GetHandlePageOffset                              undefined GetHandlePageOffset(Me
+        0020fab4 10 00 a2 af     _sw        v0,local_60(sp)
+        0020fab8 2d 20 a0 02     move       handle,s5
+        0020fabc 86 f5 07 0c     jal        GetMenuHandlePageIndex                           undefined GetMenuHandlePageIndex
+        0020fac0 2d f0 40 00     _move      s8,v0
+        0020fac4 2d 20 a0 02     move       handle,s5
+        0020fac8 64 f5 07 0c     jal        FUN_001fd590                                     undefined FUN_001fd590(MenuHandl
+        0020facc 40 88 02 00     _sll       s1,v0,0x1
+        0020fad0 2d 98 40 00     move       s3,v0
+        0020fad4 ce 00 a2 86     lh         v0,0xce(s5)
+        0020fad8 2d 20 a0 02     move       handle,s5
+        0020fadc 28 00 b7 8e     lw         s7,0x28(s5)
+        0020fae0 01 00 42 24     addiu      v0,v0,0x1
+        0020fae4 ea e2 07 0c     jal        FUN_001f8ba8                                     undefined FUN_001f8ba8()
+        0020fae8 14 00 a2 af     _sw        v0,local_5c(sp)
+        0020faec 14 00 a4 8f     lw         handle,local_5c(sp)
+        0020faf0 2d 00 80 18     blez       handle,LAB_0020fba8
+        0020faf4 00 00 00 00     _nop
+                             LAB_0020faf8                                    XREF[1]:     0020fba0(j)  
+        0020faf8 18 00 a3 8f     lw         v1,local_58(sp)
+        0020fafc 2d a0 00 00     move       s4,zero
+        0020fb00 2a 10 23 02     slt        v0,s1,v1
+        0020fb04 23 00 40 10     beq        v0,zero,LAB_0020fb94
+        0020fb08 2d 90 00 00     _move      s2,zero
+        0020fb0c 1c 00 a4 8f     lw         handle,local_54(sp)
+        0020fb10 80 10 11 00     sll        v0,s1,0x2
+        0020fb14 21 80 44 00     addu       s0,v0,handle
+        0020fb18 00 00 03 8e     lw         v1,0x0(s0)=>DAT_00641390                         = ??
+        0020fb1c 00 00 00 00     nop
+                             LAB_0020fb20                                    XREF[1]:     0020fb8c(j)  
+        0020fb20 04 00 10 26     addiu      s0,s0,0x4
+        0020fb24 07 00 e0 12     beq        s7,zero,LAB_0020fb44
+        0020fb28 20 00 05 24     _li        a1,0x20
+        0020fb2c 10 00 a2 8f     lw         v0,local_60(sp)
+        0020fb30 04 00 c2 16     bne        s6,v0,LAB_0020fb44
+        0020fb34 1e 00 05 24     _li        a1,0x1e
+        0020fb38 02 00 5e 12     beq        s2,s8,LAB_0020fb44
+        0020fb3c 1f 00 05 24     _li        a1,0x1f
+        0020fb40 1e 00 05 24     li         a1,0x1e
+                             LAB_0020fb44                                    XREF[3]:     0020fb24(j), 0020fb30(j), 
+                                                                                          0020fb38(j)  
+        0020fb44 30 00 04 3c     lui        handle,0x30
+        0020fb48 2d 48 60 00     move       t1,v1
+        0020fb4c e8 4b 82 8c     lw         v0,offset DAT_00304be8(handle->field0_0x0)
+        0020fb50 2d 20 a0 02     move       handle,s5
+        0020fb54 2d 30 80 02     move       a2,s4
+        0020fb58 a6 00 94 26     addiu      s4,s4,0xa6
+        0020fb5c 21 10 62 00     addu       v0,v1,v0
+        0020fb60 2d 38 60 02     move       a3,s3
+        0020fb64 99 04 4a 90     lbu        t2,0x499(v0)
+        0020fb68 a6 00 08 24     li         t0,0xa6
+        0020fb6c 0f 00 0b 24     li         t3,0xf
+        0020fb70 f2 37 08 0c     jal        FUN_0020dfc8                                     undefined FUN_0020dfc8()
+        0020fb74 01 00 52 26     _addiu     s2,s2,0x1
+        0020fb78 02 00 42 2a     slti       v0,s2,0x2
+        0020fb7c 18 00 a4 8f     lw         handle,local_58(sp)
+        0020fb80 01 00 31 26     addiu      s1,s1,0x1
+        0020fb84 03 00 40 10     beq        v0,zero,LAB_0020fb94
+        0020fb88 2a 18 24 02     _slt       v1,s1,handle
+        0020fb8c e4 ff 60 54     bnel       v1,zero,LAB_0020fb20
+        0020fb90 00 00 03 8e     _lw        v1,0x0(s0)=>DAT_00641394                         = ??
+                             LAB_0020fb94                                    XREF[2]:     0020fb04(j), 0020fb84(j)  
+        0020fb94 14 00 a3 8f     lw         v1,local_5c(sp)
+        0020fb98 01 00 d6 26     addiu      s6,s6,0x1
+        0020fb9c 2a 10 c3 02     slt        v0,s6,v1
+        0020fba0 d5 ff 40 14     bne        v0,zero,LAB_0020faf8
+        0020fba4 1c 00 73 26     _addiu     s3,s3,0x1c
+                             LAB_0020fba8                                    XREF[1]:     0020faf0(j)  
+        0020fba8 cc e3 07 0c     jal        FUN_001f8f30                                     undefined FUN_001f8f30()
+        0020fbac 00 00 00 00     _nop
+                             LAB_0020fbb0                                    XREF[1]:     0020f5bc(j)  
+        0020fbb0 20 00 b0 df     ld         s0,local_50(sp)
+        0020fbb4 28 00 b1 df     ld         s1,local_48(sp)
+        0020fbb8 30 00 b2 df     ld         s2,local_40(sp)
+        0020fbbc 38 00 b3 df     ld         s3,local_38(sp)
+        0020fbc0 40 00 b4 df     ld         s4,local_30(sp)
+        0020fbc4 48 00 b5 df     ld         s5,local_28(sp)
+        0020fbc8 50 00 b6 df     ld         s6,local_20(sp)
+        0020fbcc 58 00 b7 df     ld         s7,local_18(sp)
+        0020fbd0 60 00 be df     ld         s8,local_10(sp)
+        0020fbd4 68 00 bf df     ld         ra,local_8(sp)
+        0020fbd8 08 00 e0 03     jr         ra
+        0020fbdc 70 00 bd 27     _addiu     sp,sp,0x70

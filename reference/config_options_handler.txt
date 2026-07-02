@@ -1,0 +1,1129 @@
+                             **************************************************************
+                             *                          FUNCTION                          *
+                             **************************************************************
+                             undefined __stdcall ConfigMenuOptionsOnFrame(undefined8 
+             undefined         <UNASSIGNED>   <RETURN>
+             undefined8        a0:8           handle?
+             long              v0:8           is_valid                                XREF[13]:    00219fc4(W), 
+                                                                                                   0021a108(W), 
+                                                                                                   0021a20c(W), 
+                                                                                                   0021a2c4(W), 
+                                                                                                   0021a348(W), 
+                                                                                                   0021a384(W), 
+                                                                                                   0021a3e8(W), 
+                                                                                                   0021a3f8(W), 
+                                                                                                   0021a408(W), 
+                                                                                                   0021a4b0(W), 
+                                                                                                   0021a4e0(W), 
+                                                                                                   0021a50c(W), 
+                                                                                                   0021a740(W)  
+             long              v0:8           _handle?                                XREF[12]:    0021a108(W), 
+                                                                                                   0021a20c(W), 
+                                                                                                   0021a2c4(W), 
+                                                                                                   0021a348(W), 
+                                                                                                   0021a384(W), 
+                                                                                                   0021a3e8(W), 
+                                                                                                   0021a3f8(W), 
+                                                                                                   0021a408(W), 
+                                                                                                   0021a4b0(W), 
+                                                                                                   0021a4e0(W), 
+                                                                                                   0021a50c(W), 
+                                                                                                   0021a740(W)  
+             long              v0:8           ___handle?                              XREF[11]:    0021a20c(W), 
+                                                                                                   0021a2c4(W), 
+                                                                                                   0021a348(W), 
+                                                                                                   0021a384(W), 
+                                                                                                   0021a3e8(W), 
+                                                                                                   0021a3f8(W), 
+                                                                                                   0021a408(W), 
+                                                                                                   0021a4b0(W), 
+                                                                                                   0021a4e0(W), 
+                                                                                                   0021a50c(W), 
+                                                                                                   0021a740(W)  
+             long              v0:8           ____handle?                             XREF[10]:    0021a2c4(W), 
+                                                                                                   0021a348(W), 
+                                                                                                   0021a384(W), 
+                                                                                                   0021a3e8(W), 
+                                                                                                   0021a3f8(W), 
+                                                                                                   0021a408(W), 
+                                                                                                   0021a4b0(W), 
+                                                                                                   0021a4e0(W), 
+                                                                                                   0021a50c(W), 
+                                                                                                   0021a740(W)  
+             long              v0:8           game_pad_menu_handle?                   XREF[9]:     0021a348(W), 
+                                                                                                   0021a384(W), 
+                                                                                                   0021a3e8(W), 
+                                                                                                   0021a3f8(W), 
+                                                                                                   0021a408(W), 
+                                                                                                   0021a4b0(W), 
+                                                                                                   0021a4e0(W), 
+                                                                                                   0021a50c(W), 
+                                                                                                   0021a740(W)  
+             undefined4        v0_lo:4        row_value                               XREF[8]:     0021a384(W), 
+                                                                                                   0021a3e8(W), 
+                                                                                                   0021a3f8(W), 
+                                                                                                   0021a408(W), 
+                                                                                                   0021a4b0(W), 
+                                                                                                   0021a4e0(W), 
+                                                                                                   0021a50c(W), 
+                                                                                                   0021a740(W)  
+             long              v0:8           row_4_value                             XREF[7]:     0021a3e8(W), 
+                                                                                                   0021a3f8(W), 
+                                                                                                   0021a408(W), 
+                                                                                                   0021a4b0(W), 
+                                                                                                   0021a4e0(W), 
+                                                                                                   0021a50c(W), 
+                                                                                                   0021a740(W)  
+             long              v0:8           result                                  XREF[6]:     0021a3f8(W), 
+                                                                                                   0021a408(W), 
+                                                                                                   0021a4b0(W), 
+                                                                                                   0021a4e0(W), 
+                                                                                                   0021a50c(W), 
+                                                                                                   0021a740(W)  
+             long              v0:8           row_5_value                             XREF[5]:     0021a408(W), 
+                                                                                                   0021a4b0(W), 
+                                                                                                   0021a4e0(W), 
+                                                                                                   0021a50c(W), 
+                                                                                                   0021a740(W)  
+             undefined8        v0:8           selected_index                          XREF[4]:     0021a4b0(W), 
+                                                                                                   0021a4e0(W), 
+                                                                                                   0021a50c(W), 
+                                                                                                   0021a740(W)  
+             long              v0:8           bb_unit_installed                       XREF[3]:     0021a4e0(W), 
+                                                                                                   0021a50c(W), 
+                                                                                                   0021a740(W)  
+             long              v0:8           _row_value                              XREF[2]:     0021a50c(W), 
+                                                                                                   0021a740(W)  
+             undefined4        s2_lo:4        i                                       XREF[1]:     0021a70c(W)  
+             undefined4        v0_lo:4        pRowBackgroundStyles                    XREF[1]:     0021a740(W)  
+             long              v0:8           selected_row_value
+             int               s3_lo:4        y_coord                                 XREF[1]:     0021ab94(W)  
+             undefined8        Stack[-0x8]:8  local_8                                 XREF[2]:     00219fc0(W), 
+                                                                                                   0021ac28(R)  
+             undefined8        Stack[-0x10]:8 local_10                                XREF[2]:     00219fbc(W), 
+                                                                                                   0021ac24(R)  
+             undefined8        Stack[-0x18]:8 local_18                                XREF[2]:     00219fb8(W), 
+                                                                                                   0021ac20(R)  
+             undefined8        Stack[-0x20]:8 local_20                                XREF[2]:     00219fb4(W), 
+                                                                                                   0021ac1c(R)  
+             undefined8        Stack[-0x28]:8 local_28                                XREF[2]:     00219fb0(W), 
+                                                                                                   0021ac18(R)  
+             undefined8        Stack[-0x30]:8 local_30                                XREF[2]:     00219f9c(W), 
+                                                                                                   0021ac14(R)  
+             undefined8        Stack[-0x38]:8 local_38                                XREF[2]:     00219fac(W), 
+                                                                                                   0021ac10(R)  
+             undefined8        Stack[-0x40]:8 local_40                                XREF[2]:     00219fa8(W), 
+                                                                                                   0021ac0c(R)  
+             undefined8        Stack[-0x48]:8 local_48                                XREF[2]:     00219fa4(W), 
+                                                                                                   0021ac08(R)  
+             undefined8        Stack[-0x50]:8 local_50                                XREF[4]:     00219fa0(W), 
+                                                                                                   0021ab80(R), 
+                                                                                                   0021abd4(R), 
+                                                                                                   0021ac04(R)  
+             undefined4        Stack[-0x58]:4 local_58                                XREF[2]:     0021a354(W), 
+                                                                                                   0021a364(R)  
+             undefined4        Stack[-0x5c]:4 __handle?                               XREF[11]:    0021a114(W), 
+                                                                                                   0021a124(R), 
+                                                                                                   0021a134(R), 
+                                                                                                   0021a218(W), 
+                                                                                                   0021a228(R), 
+                                                                                                   0021a238(R), 
+                                                                                                   0021a318(W), 
+                                                                                                   0021a328(R), 
+                                                                                                   0021a338(R), 
+                                                                                                   0021a358(R), 
+                                                                                                   0021a36c(R)  
+             undefined4        Stack[-0x60]:4 local_60                                XREF[16]:    0021a0cc(W), 
+                                                                                                   0021a0e4(R), 
+                                                                                                   0021a0f4(R), 
+                                                                                                   0021a118(R), 
+                                                                                                   0021a12c(R), 
+                                                                                                   0021a1d0(W), 
+                                                                                                   0021a1e8(R), 
+                                                                                                   0021a1f8(R), 
+                                                                                                   0021a21c(R), 
+                                                                                                   0021a230(R), 
+                                                                                                   0021a2d0(W), 
+                                                                                                   0021a2e8(R), 
+                                                                                                   0021a2f8(R), 
+                                                                                                   0021a31c(R), 
+                                                                                                   0021a330(R), 
+                                                                                                   0021a374(R)  
+             undefined4        Stack[-0x6c]:4 local_6c                                XREF[12]:    0021a764(W), 
+                                                                                                   0021a79c(R), 
+                                                                                                   0021a80c(W), 
+                                                                                                   0021a844(R), 
+                                                                                                   0021a8b4(W), 
+                                                                                                   0021a8ec(R), 
+                                                                                                   0021a95c(W), 
+                                                                                                   0021a994(R), 
+                                                                                                   0021aa04(W), 
+                                                                                                   0021aa3c(R), 
+                                                                                                   0021aaac(W), 
+                                                                                                   0021aae4(R)  
+             undefined4        Stack[-0x70]:4 local_70                                XREF[14]:    0021a768(W), 
+                                                                                                   0021a76c(R), 
+                                                                                                   0021a810(W), 
+                                                                                                   0021a814(R), 
+                                                                                                   0021a8b8(W), 
+                                                                                                   0021a8bc(R), 
+                                                                                                   0021a960(W), 
+                                                                                                   0021a964(R), 
+                                                                                                   0021aa08(W), 
+                                                                                                   0021aa0c(R), 
+                                                                                                   0021aab0(W), 
+                                                                                                   0021aab4(R), 
+                                                                                                   0021ab38(W), 
+                                                                                                   0021ab40(R)  
+             undefined4        Stack[-0x80]:4 local_80                                XREF[16]:    0021a714(W), 
+                                                                                                   0021a794(W), 
+                                                                                                   0021a7c0(W), 
+                                                                                                   0021a83c(W), 
+                                                                                                   0021a868(W), 
+                                                                                                   0021a8e4(W), 
+                                                                                                   0021a910(W), 
+                                                                                                   0021a98c(W), 
+                                                                                                   0021a9b8(W), 
+                                                                                                   0021aa34(W), 
+                                                                                                   0021aa60(W), 
+                                                                                                   0021aadc(W), 
+                                                                                                   0021ab08(W), 
+                                                                                                   0021ab70(W), 
+                                                                                                   0021abcc(W), 
+                                                                                                   0021ac00(W)  
+             undefined4        HASH:3f6fe3e   _p_row_values
+             undefined1        HASH:79fd55d   updated_config_value
+             uint              HASH:5f2c2eb   row_0_value_1_style
+             uint              HASH:5fb1e86   row_1_value_1_style
+             uint              HASH:5ff4379   row_2_value_1_style
+             uint              HASH:5f38112   row_3_value_1_style
+             uint              HASH:5f9313b   row_4_value_1_style
+             uint              HASH:5f0f260   row_5_value_1_style
+             uint              HASH:3ff6060   row_6_value_0_style
+                             ConfigMenuOptionsOnFrame                        XREF[1]:     003f4c90(*)  
+        00219f98 80 ff bd 27     addiu      sp,sp,-0x80
+        00219f9c 50 00 b4 ff     sd         s4,local_30(sp)
+        00219fa0 30 00 b0 ff     sd         s0,local_50(sp)
+        00219fa4 38 00 b1 ff     sd         s1,local_48(sp)
+        00219fa8 40 00 b2 ff     sd         s2,local_40(sp)
+        00219fac 48 00 b3 ff     sd         s3,local_38(sp)
+        00219fb0 58 00 b5 ff     sd         s5,local_28(sp)
+        00219fb4 60 00 b6 ff     sd         s6,local_20(sp)
+        00219fb8 68 00 b7 ff     sd         s7,local_18(sp)
+        00219fbc 70 00 be ff     sd         s8,local_10(sp)
+        00219fc0 78 00 bf ff     sd         ra,local_8(sp)
+                             ConfigMenuOptionsOnFrame::override::prt_219fc4
+        00219fc4 ae d0 07 0c     jal        is_valid_handle                                  long is_valid_handle(MenuHandle 
+        00219fc8 2d a0 80 00     _move      s4,handle?
+        00219fcc 96 01 40 10     beq        is_valid,zero,LAB_0021a628
+        00219fd0 42 00 02 3c     _lui       is_valid,0x42
+        00219fd4 c8 5b 53 24     addiu      s3,is_valid,0x5bc8
+        00219fd8 00 00 63 8e     lw         v1,0x0(s3)=>MENU_INPUT_HANDLER_PTR               = 00000000
+        00219fdc 08 00 63 8c     lw         v1,0x8(v1)
+        00219fe0 00 40 62 30     andi       is_valid,v1,0x4000
+        00219fe4 08 00 40 10     beq        is_valid,zero,LAB_0021a008
+        00219fe8 64 00 02 3c     _lui       is_valid,0x64
+        00219fec 64 00 1e 3c     lui        s8,0x64
+                             Cancel Button Pressed
+        00219ff0 d6 cd 07 0c     jal        FUN_001f3758                                     undefined FUN_001f3758()
+        00219ff4 20 2d 44 8c     _lw        handle?,offset MENU_STRUCT_PTR?(is_valid)        = NaP
+                             Play Menu Cancel Sound
+        00219ff8 da 75 04 0c     jal        PlaySound                                        undefined PlaySound()
+        00219ffc 03 00 04 24     _li        handle?,0x3
+        0021a000 8b 01 00 10     b          switchD_0021a038::caseD_8
+        0021a004 64 00 02 3c     _lui       is_valid,0x64
+                             LAB_0021a008                                    XREF[1]:     00219fe4(j)  
+        0021a008 00 20 62 30     andi       is_valid,v1,0x2000
+        0021a00c 22 01 40 10     beq        is_valid,zero,LAB_0021a498
+        0021a010 2d 20 80 02     _move      handle?,s4
+        0021a014 64 00 1e 3c     lui        s8,0x64
+        0021a018 24 2d c3 8f     lw         v1,offset CONFIG_MENU_SELECTED_INDEX(s8)         = ??
+        0021a01c 08 00 62 2c     sltiu      is_valid,v1,0x8
+        0021a020 82 01 40 10     beq        is_valid,zero,LAB_0021a62c
+        0021a024 2d 88 c0 03     _move      s1,s8
+        0021a028 80 10 03 00     sll        is_valid,v1,0x2
+        0021a02c 49 00 03 3c     lui        v1,0x49
+        0021a030 21 18 62 00     addu       v1,v1,is_valid
+        0021a034 20 0f 63 8c     lw         v1,offset switchD_0021a038::switchdataD_00490f   = 0021a040
+                             Confirm Button Input Handling
+                             switchD_0021a038::switchD
+        0021a038 08 00 60 00     jr         v1
+        0021a03c 00 00 00 00     _nop
+                             switchD_0021a038::caseD_0                       XREF[2]:     0021a038(j), 00490f20(*)  
+        0021a040 1a d1 07 0c     jal        FUN_001f4468                                     undefined FUN_001f4468()
+        0021a044 2d 20 80 02     _move      handle?,s4
+        0021a048 2d 20 80 02     move       handle?,s4
+        0021a04c 05 00 05 24     li         a1,0x5
+        0021a050 56 cf 07 0c     jal        FUN_001f3d58                                     undefined FUN_001f3d58()
+        0021a054 2d 80 40 00     _move      s0,is_valid
+        0021a058 d6 cd 07 0c     jal        FUN_001f3758                                     undefined FUN_001f3758()
+        0021a05c 2d 20 80 02     _move      handle?,s4
+                             Play Menu Confirm Sound
+        0021a060 da 75 04 0c     jal        PlaySound                                        undefined PlaySound()
+        0021a064 02 00 04 24     _li        handle?,0x2
+        0021a068 3f 00 02 3c     lui        is_valid,0x3f
+        0021a06c cc 34 49 24     addiu      t1=>DAT_003f34cc,is_valid,0x34cc
+        0021a070 00 00 23 8d     lw         v1,0x0(t1)=>DAT_003f34cc
+        0021a074 11 00 60 14     bne        v1,zero,LAB_0021a0bc
+        0021a078 3f 00 04 3c     _lui       handle?,0x3f
+        0021a07c 3f 00 08 3c     lui        t0,0x3f
+        0021a080 3f 00 02 3c     lui        is_valid,0x3f
+        0021a084 c8 34 08 25     addiu      t0=>DAT_003f34c8,t0,0x34c8
+        0021a088 d0 34 45 8c     lw         a1,offset DAT_003f34d0(is_valid)
+        0021a08c 00 00 03 8d     lw         v1,0x0(t0)=>DAT_003f34c8
+        0021a090 01 00 02 24     li         is_valid,0x1
+        0021a094 49 00 04 3c     lui        handle?,0x49
+        0021a098 22 00 06 3c     lui        a2,0x22
+        0021a09c 01 00 63 24     addiu      v1,v1,0x1
+        0021a0a0 00 00 22 ad     sw         is_valid,0x0(t1)=>DAT_003f34cc
+        0021a0a4 00 00 03 ad     sw         v1,0x0(t0)=>DAT_003f34c8
+        0021a0a8 10 0f 84 24     addiu      handle?=>s_menu/md_pad.bin_00490f10,handle?,0x   = "menu/md_pad.bin"
+        0021a0ac d0 94 c6 24     addiu      a2=>LAB_002194d0,a2,-0x6b30
+        0021a0b0 d2 81 04 0c     jal        FUN_00120748                                     undefined FUN_00120748()
+        0021a0b4 2d 38 00 00     _move      a3,zero
+        0021a0b8 3f 00 04 3c     lui        handle?,0x3f
+                             LAB_0021a0bc                                    XREF[1]:     0021a074(j)  
+        0021a0bc 06 00 05 24     li         a1,0x6
+                             ConfigMenuOptionsOnFrame::override::prt_21a0c0
+        0021a0c0 48 cd 07 0c     jal        InstatiateMenuWrapper                            undefined InstatiateMenuWrapper(
+        0021a0c4 40 4b 84 24     _addiu     handle?=>MenuCallbacks_003f4b40,handle?,0x4b40
+        0021a0c8 58 01 40 10     beq        is_valid,zero,LAB_0021a62c
+        0021a0cc 20 00 a2 af     _sw        is_valid,local_60(sp)
+        0021a0d0 2d 28 40 00     move       a1,is_valid
+        0021a0d4 a4 cf 07 0c     jal        set_MenuHandle_child                             undefined set_MenuHandle_child(M
+        0021a0d8 2d 20 00 02     _move      handle?,s0
+        0021a0dc 2d 28 00 02     move       a1,s0
+        0021a0e0 88 cf 07 0c     jal        set_MenuHandle_parent                            undefined set_MenuHandle_parent(
+        0021a0e4 20 00 a4 8f     _lw        handle?,local_60(sp)
+        0021a0e8 3f 00 02 3c     lui        is_valid,0x3f
+        0021a0ec b8 34 43 8c     lw         v1,offset MENU_ROW_VALUES_ARRAY_PTR(is_valid)    = 00000000
+        0021a0f0 3f 00 04 3c     lui        handle?,0x3f
+        0021a0f4 20 00 a6 8f     lw         a2,local_60(sp)
+        0021a0f8 10 4b 84 24     addiu      handle?=>MenuCallbacks_003f4b10,handle?,0x4b10
+        0021a0fc 00 00 62 94     lhu        is_valid,0x0(v1)
+        0021a100 06 00 05 24     li         a1,0x6
+        0021a104 00 11 02 00     sll        is_valid,is_valid,0x4
+        0021a108 6a cc 07 0c     jal        InstantiateMenu                                  undefined InstantiateMenu(MenuCa
+        0021a10c da 00 c2 a4     _sh        _handle?,0xda(a2)
+        0021a110 46 01 40 10     beq        _handle?,zero,LAB_0021a62c
+        0021a114 24 00 a2 af     _sw        _handle?,__handle?(sp)
+        0021a118 20 00 a4 8f     lw         handle?,local_60(sp)
+        0021a11c a4 cf 07 0c     jal        set_MenuHandle_child                             undefined set_MenuHandle_child(M
+        0021a120 2d 28 40 00     _move      a1,_handle?
+        0021a124 24 00 a4 8f     lw         handle?,__handle?(sp)
+        0021a128 88 cf 07 0c     jal        set_MenuHandle_parent                            undefined set_MenuHandle_parent(
+        0021a12c 20 00 a5 8f     _lw        a1,local_60(sp)
+        0021a130 60 00 03 24     li         v1,0x60
+        0021a134 24 00 a2 8f     lw         _handle?,__handle?(sp)
+        0021a138 3f 00 04 3c     lui        handle?,0x3f
+        0021a13c f0 47 84 24     addiu      handle?=>MenuCallbacks_003f47f0,handle?,0x47f0
+        0021a140 06 00 05 24     li         a1,0x6
+        0021a144 80 00 00 10     b          LAB_0021a348
+        0021a148 d2 00 43 a4     _sh        v1,0xd2(_handle?)
+        0021a14c 00              ??         00h
+        0021a14d 00              ??         00h
+        0021a14e 00              ??         00h
+        0021a14f 00              ??         00h
+                             switchD_0021a038::caseD_1                       XREF[2]:     0021a038(j), 00490f24(*)  
+        0021a150 1a d1 07 0c     jal        FUN_001f4468                                     undefined FUN_001f4468()
+        0021a154 2d 20 80 02     _move      handle?,s4
+        0021a158 2d 20 80 02     move       handle?,s4
+        0021a15c d6 cd 07 0c     jal        FUN_001f3758                                     undefined FUN_001f3758()
+        0021a160 2d 80 40 00     _move      s0,_handle?
+                             Play Menu Confirm Sound
+        0021a164 da 75 04 0c     jal        PlaySound                                        undefined PlaySound()
+        0021a168 02 00 04 24     _li        handle?,0x2
+        0021a16c 3f 00 02 3c     lui        _handle?,0x3f
+        0021a170 cc 34 49 24     addiu      t1=>DAT_003f34cc,_handle?,0x34cc
+        0021a174 00 00 23 8d     lw         v1,0x0(t1)=>DAT_003f34cc
+        0021a178 11 00 60 14     bne        v1,zero,LAB_0021a1c0
+        0021a17c 3f 00 04 3c     _lui       handle?,0x3f
+        0021a180 3f 00 08 3c     lui        t0,0x3f
+        0021a184 3f 00 02 3c     lui        _handle?,0x3f
+        0021a188 c8 34 08 25     addiu      t0=>DAT_003f34c8,t0,0x34c8
+        0021a18c d0 34 45 8c     lw         a1,offset DAT_003f34d0(_handle?)
+        0021a190 00 00 03 8d     lw         v1,0x0(t0)=>DAT_003f34c8
+        0021a194 01 00 02 24     li         _handle?,0x1
+        0021a198 49 00 04 3c     lui        handle?,0x49
+        0021a19c 22 00 06 3c     lui        a2,0x22
+        0021a1a0 01 00 63 24     addiu      v1,v1,0x1
+        0021a1a4 00 00 22 ad     sw         _handle?,0x0(t1)=>DAT_003f34cc
+        0021a1a8 00 00 03 ad     sw         v1,0x0(t0)=>DAT_003f34c8
+        0021a1ac 10 0f 84 24     addiu      handle?=>s_menu/md_pad.bin_00490f10,handle?,0x   = "menu/md_pad.bin"
+        0021a1b0 d0 94 c6 24     addiu      a2=>LAB_002194d0,a2,-0x6b30
+        0021a1b4 d2 81 04 0c     jal        FUN_00120748                                     undefined FUN_00120748()
+        0021a1b8 2d 38 00 00     _move      a3,zero
+        0021a1bc 3f 00 04 3c     lui        handle?,0x3f
+                             LAB_0021a1c0                                    XREF[1]:     0021a178(j)  
+        0021a1c0 06 00 05 24     li         a1,0x6
+                             ConfigMenuOptionsOnFrame::override::prt_21a1c4
+        0021a1c4 48 cd 07 0c     jal        InstatiateMenuWrapper                            undefined InstatiateMenuWrapper(
+        0021a1c8 70 4b 84 24     _addiu     handle?=>MenuCallbacks_003f4b70,handle?,0x4b70
+        0021a1cc 17 01 40 10     beq        _handle?,zero,LAB_0021a62c
+        0021a1d0 20 00 a2 af     _sw        _handle?,local_60(sp)
+        0021a1d4 2d 28 40 00     move       a1,_handle?
+        0021a1d8 a4 cf 07 0c     jal        set_MenuHandle_child                             undefined set_MenuHandle_child(M
+        0021a1dc 2d 20 00 02     _move      handle?,s0
+        0021a1e0 2d 28 00 02     move       a1,s0
+        0021a1e4 88 cf 07 0c     jal        set_MenuHandle_parent                            undefined set_MenuHandle_parent(
+        0021a1e8 20 00 a4 8f     _lw        handle?,local_60(sp)
+        0021a1ec 3f 00 02 3c     lui        _handle?,0x3f
+        0021a1f0 b8 34 43 8c     lw         v1,offset MENU_ROW_VALUES_ARRAY_PTR(_handle?)    = 00000000
+        0021a1f4 3f 00 04 3c     lui        handle?,0x3f
+        0021a1f8 20 00 a6 8f     lw         a2,local_60(sp)
+        0021a1fc 10 4b 84 24     addiu      handle?=>MenuCallbacks_003f4b10,handle?,0x4b10
+        0021a200 04 00 62 94     lhu        _handle?,0x4(v1)
+        0021a204 06 00 05 24     li         a1,0x6
+        0021a208 00 11 02 00     sll        _handle?,_handle?,0x4
+        0021a20c 6a cc 07 0c     jal        InstantiateMenu                                  undefined InstantiateMenu(MenuCa
+        0021a210 da 00 c2 a4     _sh        ___handle?,0xda(a2)
+        0021a214 05 01 40 10     beq        ___handle?,zero,LAB_0021a62c
+        0021a218 24 00 a2 af     _sw        ___handle?,__handle?(sp)
+        0021a21c 20 00 a4 8f     lw         handle?,local_60(sp)
+        0021a220 a4 cf 07 0c     jal        set_MenuHandle_child                             undefined set_MenuHandle_child(M
+        0021a224 2d 28 40 00     _move      a1,___handle?
+        0021a228 24 00 a4 8f     lw         handle?,__handle?(sp)
+        0021a22c 88 cf 07 0c     jal        set_MenuHandle_parent                            undefined set_MenuHandle_parent(
+        0021a230 20 00 a5 8f     _lw        a1,local_60(sp)
+        0021a234 60 00 03 24     li         v1,0x60
+        0021a238 24 00 a2 8f     lw         ___handle?,__handle?(sp)
+        0021a23c 3f 00 04 3c     lui        handle?,0x3f
+        0021a240 f0 47 84 24     addiu      handle?=>MenuCallbacks_003f47f0,handle?,0x47f0
+        0021a244 06 00 05 24     li         a1,0x6
+        0021a248 3f 00 00 10     b          LAB_0021a348
+        0021a24c d2 00 43 a4     _sh        v1,0xd2(___handle?)
+                             switchD_0021a038::caseD_2                       XREF[2]:     0021a038(j), 00490f28(*)  
+        0021a250 1a d1 07 0c     jal        FUN_001f4468                                     undefined FUN_001f4468()
+        0021a254 2d 20 80 02     _move      handle?,s4
+        0021a258 2d 20 80 02     move       handle?,s4
+        0021a25c d6 cd 07 0c     jal        FUN_001f3758                                     undefined FUN_001f3758()
+        0021a260 2d 80 40 00     _move      s0,___handle?
+                             Play Menu Confirm Sound
+        0021a264 da 75 04 0c     jal        PlaySound                                        undefined PlaySound()
+        0021a268 02 00 04 24     _li        handle?,0x2
+        0021a26c 3f 00 02 3c     lui        ___handle?,0x3f
+        0021a270 cc 34 49 24     addiu      t1=>DAT_003f34cc,___handle?,0x34cc
+        0021a274 00 00 23 8d     lw         v1,0x0(t1)=>DAT_003f34cc
+        0021a278 11 00 60 14     bne        v1,zero,LAB_0021a2c0
+        0021a27c 3f 00 04 3c     _lui       handle?,0x3f
+        0021a280 3f 00 08 3c     lui        t0,0x3f
+        0021a284 3f 00 02 3c     lui        ___handle?,0x3f
+        0021a288 c8 34 08 25     addiu      t0=>DAT_003f34c8,t0,0x34c8
+        0021a28c d0 34 45 8c     lw         a1,offset DAT_003f34d0(___handle?)
+        0021a290 00 00 03 8d     lw         v1,0x0(t0)=>DAT_003f34c8
+        0021a294 01 00 02 24     li         ___handle?,0x1
+        0021a298 49 00 04 3c     lui        handle?,0x49
+        0021a29c 22 00 06 3c     lui        a2,0x22
+        0021a2a0 01 00 63 24     addiu      v1,v1,0x1
+        0021a2a4 00 00 22 ad     sw         ___handle?,0x0(t1)=>DAT_003f34cc
+        0021a2a8 00 00 03 ad     sw         v1,0x0(t0)=>DAT_003f34c8
+        0021a2ac 10 0f 84 24     addiu      handle?=>s_menu/md_pad.bin_00490f10,handle?,0x   = "menu/md_pad.bin"
+        0021a2b0 d0 94 c6 24     addiu      a2=>LAB_002194d0,a2,-0x6b30
+        0021a2b4 d2 81 04 0c     jal        FUN_00120748                                     undefined FUN_00120748()
+        0021a2b8 2d 38 00 00     _move      a3,zero
+        0021a2bc 3f 00 04 3c     lui        handle?,0x3f
+                             LAB_0021a2c0                                    XREF[1]:     0021a278(j)  
+        0021a2c0 06 00 05 24     li         a1,0x6
+                             ConfigMenuOptionsOnFrame::override::prt_21a2c4
+        0021a2c4 48 cd 07 0c     jal        InstatiateMenuWrapper                            undefined InstatiateMenuWrapper(
+        0021a2c8 a0 4b 84 24     _addiu     handle?=>MenuCallbacks_003f4ba0,handle?,0x4ba0
+        0021a2cc d7 00 40 10     beq        ____handle?,zero,LAB_0021a62c
+        0021a2d0 20 00 a2 af     _sw        ____handle?,local_60(sp)
+        0021a2d4 2d 28 40 00     move       a1,____handle?
+        0021a2d8 a4 cf 07 0c     jal        set_MenuHandle_child                             undefined set_MenuHandle_child(M
+        0021a2dc 2d 20 00 02     _move      handle?,s0
+        0021a2e0 2d 28 00 02     move       a1,s0
+        0021a2e4 88 cf 07 0c     jal        set_MenuHandle_parent                            undefined set_MenuHandle_parent(
+        0021a2e8 20 00 a4 8f     _lw        handle?,local_60(sp)
+        0021a2ec 3f 00 02 3c     lui        ____handle?,0x3f
+        0021a2f0 b8 34 43 8c     lw         v1,offset MENU_ROW_VALUES_ARRAY_PTR(____handle?) = 00000000
+        0021a2f4 3f 00 04 3c     lui        handle?,0x3f
+        0021a2f8 20 00 a6 8f     lw         a2,local_60(sp)
+        0021a2fc 10 4b 84 24     addiu      handle?=>MenuCallbacks_003f4b10,handle?,0x4b10
+        0021a300 08 00 62 94     lhu        ____handle?,0x8(v1)
+        0021a304 06 00 05 24     li         a1,0x6
+        0021a308 00 11 02 00     sll        ____handle?,____handle?,0x4
+        0021a30c 6a cc 07 0c     jal        InstantiateMenu                                  undefined InstantiateMenu(MenuCa
+        0021a310 da 00 c2 a4     _sh        ____handle?,0xda(a2)
+        0021a314 c5 00 40 10     beq        ____handle?,zero,LAB_0021a62c
+        0021a318 24 00 a2 af     _sw        ____handle?,__handle?(sp)
+        0021a31c 20 00 a4 8f     lw         handle?,local_60(sp)
+        0021a320 a4 cf 07 0c     jal        set_MenuHandle_child                             undefined set_MenuHandle_child(M
+        0021a324 2d 28 40 00     _move      a1,____handle?
+        0021a328 24 00 a4 8f     lw         handle?,__handle?(sp)
+        0021a32c 88 cf 07 0c     jal        set_MenuHandle_parent                            undefined set_MenuHandle_parent(
+        0021a330 20 00 a5 8f     _lw        a1,local_60(sp)
+        0021a334 3f 00 04 3c     lui        handle?,0x3f
+        0021a338 24 00 a2 8f     lw         ____handle?,__handle?(sp)
+        0021a33c f0 47 84 24     addiu      handle?=>MenuCallbacks_003f47f0,handle?,0x47f0
+        0021a340 06 00 05 24     li         a1,0x6
+        0021a344 d2 00 40 a4     sh         zero,0xd2(____handle?)
+                             Render Game Pad Menu
+                             LAB_0021a348                                    XREF[2]:     0021a144(j), 0021a248(j)  
+        0021a348 6a cc 07 0c     jal        InstantiateMenu                                  undefined InstantiateMenu(MenuCa
+        0021a34c 00 00 00 00     _nop
+        0021a350 b6 00 40 10     beq        game_pad_menu_handle?,zero,LAB_0021a62c
+        0021a354 28 00 a2 af     _sw        game_pad_menu_handle?,local_58(sp)
+        0021a358 24 00 a4 8f     lw         handle?,__handle?(sp)
+        0021a35c a4 cf 07 0c     jal        set_MenuHandle_child                             undefined set_MenuHandle_child(M
+        0021a360 2d 28 40 00     _move      a1,game_pad_menu_handle?
+        0021a364 28 00 a4 8f     lw         handle?,local_58(sp)
+        0021a368 88 cf 07 0c     jal        set_MenuHandle_parent                            undefined set_MenuHandle_parent(
+        0021a36c 24 00 a5 8f     _lw        a1,__handle?(sp)
+        0021a370 70 cf 07 0c     jal        RegisterHandle?                                  undefined RegisterHandle?(MenuHa
+        0021a374 20 00 a4 8f     _lw        handle?,local_60(sp)
+        0021a378 ad 00 00 10     b          switchD_0021a038::caseD_8
+        0021a37c 64 00 02 3c     _lui       game_pad_menu_handle?,0x64
+                             switchD_0021a038::caseD_4                       XREF[3]:     0021a038(j), 00490f2c(*), 
+                             switchD_0021a038::caseD_3                                    00490f30(*)  
+        0021a380 24 2d 30 26     addiu      s0,s1,0x2d24
+        0021a384 56 64 08 0c     jal        GET_CONFIG_ROW_VALUE                             undefined GET_CONFIG_ROW_VALUE(u
+        0021a388 00 00 04 8e     _lw        handle?,0x0(s0)=>CONFIG_MENU_SELECTED_INDEX      = ??
+        0021a38c 00 00 05 8e     lw         a1,0x0(s0)=>CONFIG_MENU_SELECTED_INDEX           = ??
+        0021a390 80 18 05 00     sll        v1,a1,0x2
+        0021a394 3f 00 04 3c     lui        handle?,0x3f
+        0021a398 21 20 83 00     addu       handle?,handle?,v1
+        0021a39c 18 4c 84 8c     lw         handle?,offset CONFIG_MENU_ROW_MAX_VALUES_ARRA
+        0021a3a0 2a 10 44 00     slt        row_value,row_value,handle?
+        0021a3a4 08 00 40 50     beql       row_value,zero,LAB_0021a3c8
+        0021a3a8 2d 20 a0 00     _move      handle?,a1
+        0021a3ac 56 64 08 0c     jal        GET_CONFIG_ROW_VALUE                             undefined GET_CONFIG_ROW_VALUE(u
+        0021a3b0 2d 20 a0 00     _move      handle?,a1
+        0021a3b4 00 00 04 8e     lw         handle?,0x0(s0)=>CONFIG_MENU_SELECTED_INDEX      = ??
+        0021a3b8 7c 64 08 0c     jal        SET_CONFIG_ROW_VALUE                             undefined SET_CONFIG_ROW_VALUE(u
+        0021a3bc 01 00 45 24     _addiu     a1,row_value,0x1
+        0021a3c0 03 00 00 10     b          LAB_0021a3d0
+        0021a3c4 00 00 00 00     _nop
+                             LAB_0021a3c8                                    XREF[1]:     0021a3a4(j)  
+        0021a3c8 7c 64 08 0c     jal        SET_CONFIG_ROW_VALUE                             undefined SET_CONFIG_ROW_VALUE(u
+        0021a3cc 2d 28 00 00     _move      a1,zero
+                             Play Menu Change Sound Effect
+                             LAB_0021a3d0                                    XREF[1]:     0021a3c0(j)  
+        0021a3d0 da 75 04 0c     jal        PlaySound                                        undefined PlaySound()
+        0021a3d4 01 00 04 24     _li        handle?,0x1
+        0021a3d8 24 2d 23 8e     lw         v1,offset CONFIG_MENU_SELECTED_INDEX(s1)         = ??
+        0021a3dc 04 00 02 24     li         row_value,0x4
+        0021a3e0 93 00 62 54     bnel       v1,row_value,switchD_0021a038::caseD_8
+        0021a3e4 64 00 02 3c     _lui       row_value,0x64
+        0021a3e8 e0 64 08 0c     jal        GET_MENU_ROW_4_VALUE                             undefined GET_MENU_ROW_4_VALUE()
+        0021a3ec 00 00 00 00     _nop
+        0021a3f0 88 00 00 10     b          LAB_0021a614
+        0021a3f4 00 00 00 00     _nop
+                             switchD_0021a038::caseD_5                       XREF[2]:     0021a038(j), 00490f34(*)  
+        0021a3f8 0a 65 08 0c     jal        IS_BB_UNIT_INSTALLED                             undefined IS_BB_UNIT_INSTALLED()
+        0021a3fc 00 00 00 00     _nop
+        0021a400 13 00 40 10     beq        result,zero,switchD_0021a038::caseD_6
+        0021a404 00 00 00 00     _nop
+        0021a408 56 64 08 0c     jal        GET_CONFIG_ROW_VALUE                             undefined GET_CONFIG_ROW_VALUE(u
+        0021a40c 05 00 04 24     _li        handle?,0x5
+        0021a410 09 00 40 5c     bgtzl      row_5_value,LAB_0021a438
+        0021a414 05 00 04 24     _li        handle?,0x5
+        0021a418 56 64 08 0c     jal        GET_CONFIG_ROW_VALUE                             undefined GET_CONFIG_ROW_VALUE(u
+        0021a41c 05 00 04 24     _li        handle?,0x5
+        0021a420 05 00 04 24     li         handle?,0x5
+        0021a424 7c 64 08 0c     jal        SET_CONFIG_ROW_VALUE                             undefined SET_CONFIG_ROW_VALUE(u
+        0021a428 01 00 45 24     _addiu     a1,row_5_value,0x1
+        0021a42c 04 00 00 10     b          LAB_0021a440
+        0021a430 00 00 00 00     _nop
+        0021a434 00              ??         00h
+        0021a435 00              ??         00h
+        0021a436 00              ??         00h
+        0021a437 00              ??         00h
+                             LAB_0021a438                                    XREF[1]:     0021a410(j)  
+        0021a438 7c 64 08 0c     jal        SET_CONFIG_ROW_VALUE                             undefined SET_CONFIG_ROW_VALUE(u
+        0021a43c 2d 28 00 00     _move      a1,zero
+                             Play Menu Change Sound Effect
+                             LAB_0021a440                                    XREF[1]:     0021a42c(j)  
+        0021a440 da 75 04 0c     jal        PlaySound                                        undefined PlaySound()
+        0021a444 01 00 04 24     _li        handle?,0x1
+        0021a448 79 00 00 10     b          switchD_0021a038::caseD_8
+        0021a44c 64 00 02 3c     _lui       row_5_value,0x64
+                             Play Error Sound Effect
+                             switchD_0021a038::caseD_6                       XREF[3]:     0021a038(j), 0021a400(j), 
+                                                                                          00490f38(*)  
+        0021a450 da 75 04 0c     jal        PlaySound                                        undefined PlaySound()
+        0021a454 04 00 04 24     _li        handle?,0x4
+        0021a458 75 00 00 10     b          switchD_0021a038::caseD_8
+        0021a45c 64 00 02 3c     _lui       row_5_value,0x64
+                             Play Menu Confirm Sound Effect
+                             switchD_0021a038::caseD_7                       XREF[2]:     0021a038(j), 00490f3c(*)  
+        0021a460 da 75 04 0c     jal        PlaySound                                        undefined PlaySound()
+        0021a464 02 00 04 24     _li        handle?,0x2
+        0021a468 3f 00 03 3c     lui        v1,0x3f
+        0021a46c b8 34 62 8c     lw         row_5_value,offset MENU_ROW_VALUES_ARRAY_PTR(v1) = 00000000
+        0021a470 01 00 04 24     li         handle?,0x1
+                             Reset each of the config options that are allowed to be modif
+        0021a474 18 00 40 ac     sw         zero,0x18(row_5_value)
+        0021a478 00 00 40 ac     sw         zero,0x0(row_5_value)
+        0021a47c 04 00 40 ac     sw         zero,0x4(row_5_value)
+        0021a480 08 00 40 ac     sw         zero,0x8(row_5_value)
+        0021a484 10 00 40 ac     sw         zero,0x10(row_5_value)
+        0021a488 bc b6 07 0c     jal        UPDATE_SOUND_MODE                                undefined UPDATE_SOUND_MODE(bool
+        0021a48c 14 00 40 ac     _sw        zero,0x14(row_5_value)
+        0021a490 67 00 00 10     b          switchD_0021a038::caseD_8
+        0021a494 64 00 02 3c     _lui       row_5_value,0x64
+                             Confirm Button NOT Pressed
+                             LAB_0021a498                                    XREF[1]:     0021a00c(j)  
+        0021a498 16 f6 07 0c     jal        HandlePagedMenuInputsForOrb                      undefined HandlePagedMenuInputsF
+        0021a49c 64 00 1e 3c     _lui       s8,0x64
+        0021a4a0 2d 20 80 02     move       handle?,s4
+        0021a4a4 08 00 05 24     li         a1,0x8
+        0021a4a8 46 2f 08 0c     jal        FUN_0020bd18                                     undefined FUN_0020bd18(MenuHandl
+        0021a4ac 24 2d d1 27     _addiu     s1,s8,0x2d24
+        0021a4b0 46 f5 07 0c     jal        GetSelectedMenuRow                               undefined GetSelectedMenuRow(Men
+        0021a4b4 2d 20 80 02     _move      handle?,s4
+        0021a4b8 2d a8 c0 03     move       s5,s8
+        0021a4bc 2d 18 40 00     move       v1,selected_index
+        0021a4c0 2d 90 00 00     move       s2,zero
+        0021a4c4 fa ff 62 24     addiu      selected_index,v1,-0x6
+        0021a4c8 02 00 42 2c     sltiu      selected_index,selected_index,0x2
+        0021a4cc 57 00 40 14     bne        selected_index,zero,LAB_0021a62c
+        0021a4d0 00 00 23 ae     _sw        v1,0x0(s1)=>CONFIG_MENU_SELECTED_INDEX           = ??
+        0021a4d4 05 00 02 24     li         selected_index,0x5
+        0021a4d8 06 00 62 54     bnel       v1,selected_index,LAB_0021a4f4
+        0021a4dc 00 00 63 8e     _lw        v1,0x0(s3)=>MENU_INPUT_HANDLER_PTR               = 00000000
+        0021a4e0 0a 65 08 0c     jal        IS_BB_UNIT_INSTALLED                             undefined IS_BB_UNIT_INSTALLED()
+        0021a4e4 00 00 00 00     _nop
+                             Skip additional input handling if
+                             row 6, row 7, or row 5 but BB Unit isn't installed
+        0021a4e8 51 00 40 10     beq        bb_unit_installed,zero,switchD_0021a038::caseD_8
+        0021a4ec 64 00 02 3c     _lui       bb_unit_installed,0x64
+        0021a4f0 00 00 63 8e     lw         v1,0x0(s3)=>MENU_INPUT_HANDLER_PTR               = 00000000
+                             LAB_0021a4f4                                    XREF[1]:     0021a4d8(j)  
+        0021a4f4 00 80 10 3c     lui        s0,0x8000
+        0021a4f8 80 00 10 36     ori        s0,s0,0x80
+        0021a4fc 10 00 63 8c     lw         v1,0x10(v1)
+        0021a500 24 10 70 00     and        bb_unit_installed,v1,s0
+                             Directional Input Handling
+        0021a504 1c 00 40 50     beql       bb_unit_installed,zero,LAB_0021a578
+        0021a508 00 20 10 3c     _lui       s0,0x2000
+        0021a50c 56 64 08 0c     jal        GET_CONFIG_ROW_VALUE                             undefined GET_CONFIG_ROW_VALUE(u
+        0021a510 00 00 24 8e     _lw        handle?,0x0(s1)=>CONFIG_MENU_SELECTED_INDEX      = ??
+        0021a514 0a 00 40 58     blezl      _row_value,LAB_0021a540
+        0021a518 00 00 63 8e     _lw        v1,0x0(s3)=>MENU_INPUT_HANDLER_PTR               = 00000000
+        0021a51c 00 00 24 8e     lw         handle?,0x0(s1)=>CONFIG_MENU_SELECTED_INDEX      = ??
+        0021a520 56 64 08 0c     jal        GET_CONFIG_ROW_VALUE                             undefined GET_CONFIG_ROW_VALUE(u
+        0021a524 01 00 12 24     _li        s2,0x1
+        0021a528 00 00 24 8e     lw         handle?,0x0(s1)=>CONFIG_MENU_SELECTED_INDEX      = ??
+        0021a52c 7c 64 08 0c     jal        SET_CONFIG_ROW_VALUE                             undefined SET_CONFIG_ROW_VALUE(u
+        0021a530 ff ff 45 24     _addiu     a1,_row_value,-0x1
+        0021a534 2d 00 00 10     b          LAB_0021a5ec
+        0021a538 00 00 00 00     _nop
+        0021a53c 00              ??         00h
+        0021a53d 00              ??         00h
+        0021a53e 00              ??         00h
+        0021a53f 00              ??         00h
+                             LAB_0021a540                                    XREF[1]:     0021a514(j)  
+        0021a540 08 00 62 8c     lw         _row_value,0x8(v1)
+        0021a544 24 10 50 00     and        _row_value,_row_value,s0
+        0021a548 28 00 40 10     beq        _row_value,zero,LAB_0021a5ec
+        0021a54c 00 00 00 00     _nop
+        0021a550 00 00 24 8e     lw         handle?,0x0(s1)=>CONFIG_MENU_SELECTED_INDEX      = ??
+        0021a554 80 10 04 00     sll        _row_value,handle?,0x2
+        0021a558 3f 00 05 3c     lui        a1,0x3f
+        0021a55c 21 28 a2 00     addu       a1,a1,_row_value
+        0021a560 18 4c a5 8c     lw         a1,offset CONFIG_MENU_ROW_MAX_VALUES_ARRAY(a1)
+        0021a564 7c 64 08 0c     jal        SET_CONFIG_ROW_VALUE                             undefined SET_CONFIG_ROW_VALUE(u
+        0021a568 01 00 12 24     _li        s2,0x1
+        0021a56c 1f 00 00 10     b          LAB_0021a5ec
+        0021a570 00 00 00 00     _nop
+        0021a574 00              ??         00h
+        0021a575 00              ??         00h
+        0021a576 00              ??         00h                                              ?  ->  00200000
+        0021a577 00              ??         00h
+                             LAB_0021a578                                    XREF[1]:     0021a504(j)  
+        0021a578 20 00 10 36     ori        s0,s0,0x20
+        0021a57c 24 10 70 00     and        _row_value,v1,s0
+        0021a580 1a 00 40 10     beq        _row_value,zero,LAB_0021a5ec
+        0021a584 00 00 00 00     _nop
+        0021a588 56 64 08 0c     jal        GET_CONFIG_ROW_VALUE                             undefined GET_CONFIG_ROW_VALUE(u
+        0021a58c 00 00 24 8e     _lw        handle?,0x0(s1)=>CONFIG_MENU_SELECTED_INDEX      = ??
+        0021a590 00 00 25 8e     lw         a1,0x0(s1)=>CONFIG_MENU_SELECTED_INDEX           = ??
+        0021a594 80 18 05 00     sll        v1,a1,0x2
+        0021a598 3f 00 04 3c     lui        handle?,0x3f
+        0021a59c 21 20 83 00     addu       handle?,handle?,v1
+        0021a5a0 18 4c 84 8c     lw         handle?,offset CONFIG_MENU_ROW_MAX_VALUES_ARRA
+        0021a5a4 2a 10 44 00     slt        _row_value,_row_value,handle?
+        0021a5a8 09 00 40 50     beql       _row_value,zero,LAB_0021a5d0
+        0021a5ac 00 00 63 8e     _lw        v1,0x0(s3)=>MENU_INPUT_HANDLER_PTR               = 00000000
+        0021a5b0 2d 20 a0 00     move       handle?,a1
+        0021a5b4 56 64 08 0c     jal        GET_CONFIG_ROW_VALUE                             undefined GET_CONFIG_ROW_VALUE(u
+        0021a5b8 01 00 12 24     _li        s2,0x1
+        0021a5bc 00 00 24 8e     lw         handle?,0x0(s1)=>CONFIG_MENU_SELECTED_INDEX      = ??
+        0021a5c0 7c 64 08 0c     jal        SET_CONFIG_ROW_VALUE                             undefined SET_CONFIG_ROW_VALUE(u
+        0021a5c4 01 00 45 24     _addiu     a1,_row_value,0x1
+        0021a5c8 08 00 00 10     b          LAB_0021a5ec
+        0021a5cc 00 00 00 00     _nop
+                             LAB_0021a5d0                                    XREF[1]:     0021a5a8(j)  
+        0021a5d0 08 00 62 8c     lw         _row_value,0x8(v1)
+        0021a5d4 24 10 50 00     and        _row_value,_row_value,s0
+        0021a5d8 04 00 40 10     beq        _row_value,zero,LAB_0021a5ec
+        0021a5dc 2d 20 a0 00     _move      handle?,a1
+        0021a5e0 7c 64 08 0c     jal        SET_CONFIG_ROW_VALUE                             undefined SET_CONFIG_ROW_VALUE(u
+        0021a5e4 2d 28 00 00     _move      a1,zero
+        0021a5e8 01 00 12 24     li         s2,0x1
+                             LAB_0021a5ec                                    XREF[6]:     0021a534(j), 0021a548(j), 
+                                                                                          0021a56c(j), 0021a580(j), 
+                                                                                          0021a5c8(j), 0021a5d8(j)  
+        0021a5ec 10 00 40 12     beq        s2,zero,switchD_0021a038::caseD_8
+        0021a5f0 64 00 02 3c     _lui       _row_value,0x64
+        0021a5f4 da 75 04 0c     jal        PlaySound                                        undefined PlaySound()
+        0021a5f8 01 00 04 24     _li        handle?,0x1
+        0021a5fc 24 2d a3 8e     lw         v1,offset CONFIG_MENU_SELECTED_INDEX(s5)         = ??
+        0021a600 04 00 02 24     li         _row_value,0x4
+                             If a config value was updated, Play Menu Confirm Sound
+                             and if sound config option was updated, update the sound mode
+        0021a604 0a 00 62 14     bne        v1,_row_value,switchD_0021a038::caseD_8
+        0021a608 64 00 02 3c     _lui       _row_value,0x64
+        0021a60c e0 64 08 0c     jal        GET_MENU_ROW_4_VALUE                             undefined GET_MENU_ROW_4_VALUE()
+        0021a610 00 00 00 00     _nop
+                             LAB_0021a614                                    XREF[1]:     0021a3f0(j)  
+        0021a614 bc b6 07 0c     jal        UPDATE_SOUND_MODE                                undefined UPDATE_SOUND_MODE(bool
+        0021a618 01 00 44 2c     _sltiu     handle?,_row_value,0x1
+        0021a61c 04 00 00 10     b          switchD_0021a038::caseD_8
+        0021a620 64 00 02 3c     _lui       _row_value,0x64
+        0021a624 00              ??         00h
+        0021a625 00              ??         00h
+        0021a626 00              ??         00h                                              ?  ->  00640000
+        0021a627 00              ??         00h
+                             LAB_0021a628                                    XREF[1]:     00219fcc(j)  
+        0021a628 64 00 1e 3c     lui        s8,0x64
+                             LAB_0021a62c                                    XREF[9]:     0021a020(j), 0021a0c8(j), 
+                                                                                          0021a110(j), 0021a1cc(j), 
+                                                                                          0021a214(j), 0021a2cc(j), 
+                                                                                          0021a314(j), 0021a350(j), 
+                                                                                          0021a4cc(j)  
+        0021a62c 64 00 02 3c     lui        _row_value,0x64
+                             switchD_0021a038::caseD_8                       XREF[11]:    0021a000(j), 0021a038(j), 
+                                                                                          0021a378(j), 0021a3e0(j), 
+                                                                                          0021a448(j), 0021a458(j), 
+                                                                                          0021a490(j), 0021a4e8(j), 
+                                                                                          0021a5ec(j), 0021a604(j), 
+                                                                                          0021a61c(j)  
+        0021a630 3f 00 03 3c     lui        v1,0x3f
+        0021a634 24 2d 56 24     addiu      s6,_row_value,0x2d24
+        0021a638 38 4c 75 24     addiu      s5,v1,0x4c38
+        0021a63c 47 00 13 24     li         s3,0x47
+                             Render Config Menu Row Keys
+        0021a640 2d 90 00 00     move       s2,zero
+        0021a644 06 00 17 24     li         s7,0x6
+        0021a648 00 00 c2 8e     lw         _row_value,0x0(s6)=>CONFIG_MENU_SELECTED_INDEX   = ??
+        0021a64c 00 00 00 00     nop
+                             LAB_0021a650                                    XREF[1]:     0021a71c(j)  
+        0021a650 23 00 42 16     bne        s2,_row_value,LAB_0021a6e0
+        0021a654 2d 88 00 00     _move      s1,zero
+        0021a658 07 00 42 2a     slti       _row_value,s2,0x7
+        0021a65c 20 00 40 50     beql       _row_value,zero,LAB_0021a6e0
+        0021a660 01 00 11 24     _li        s1,0x1
+        0021a664 0c 00 70 26     addiu      s0,s3,0xc
+        0021a668 c0 ff 05 24     li         a1,-0x40
+        0021a66c 2d 30 00 02     move       a2,s0
+        0021a670 4b 00 07 24     li         a3,0x4b
+        0021a674 2d 20 80 02     move       handle?,s4
+        0021a678 a4 19 08 0c     jal        FUN_00206690                                     undefined FUN_00206690()
+        0021a67c 0b 00 11 24     _li        s1,0xb
+        0021a680 2d 20 80 02     move       handle?,s4
+        0021a684 99 00 05 24     li         a1,0x99
+        0021a688 2d 30 00 02     move       a2,s0
+        0021a68c a4 19 08 0c     jal        FUN_00206690                                     undefined FUN_00206690()
+        0021a690 06 00 07 24     _li        a3,0x6
+        0021a694 00 00 c2 8e     lw         _row_value,0x0(s6)=>CONFIG_MENU_SELECTED_INDEX   = ??
+        0021a698 09 00 57 10     beq        _row_value,s7,LAB_0021a6c0
+        0021a69c 41 01 05 24     _li        a1,0x141
+        0021a6a0 2d 30 00 02     move       a2,s0
+        0021a6a4 06 00 07 24     li         a3,0x6
+        0021a6a8 a4 19 08 0c     jal        FUN_00206690                                     undefined FUN_00206690()
+        0021a6ac 2d 20 80 02     _move      handle?,s4
+        0021a6b0 2d 20 80 02     move       handle?,s4
+        0021a6b4 e9 01 05 24     li         a1,0x1e9
+        0021a6b8 04 00 00 10     b          LAB_0021a6cc
+        0021a6bc 2d 30 00 02     _move      a2,s0
+                             LAB_0021a6c0                                    XREF[1]:     0021a698(j)  
+        0021a6c0 2d 30 00 02     move       a2,s0
+        0021a6c4 2d 20 80 02     move       handle?,s4
+        0021a6c8 e9 01 05 24     li         a1,0x1e9
+                             LAB_0021a6cc                                    XREF[1]:     0021a6b8(j)  
+        0021a6cc a4 19 08 0c     jal        FUN_00206690                                     undefined FUN_00206690()
+        0021a6d0 17 00 07 24     _li        a3,0x17
+        0021a6d4 03 00 00 10     b          LAB_0021a6e4
+        0021a6d8 00 00 a2 8e     _lw        _row_value,0x0(s5)=>INT_ARRAY_003f4c38
+        0021a6dc 00              ??         00h
+        0021a6dd 00              ??         00h
+        0021a6de 00              ??         00h
+        0021a6df 00              ??         00h
+                             LAB_0021a6e0                                    XREF[2]:     0021a650(j), 0021a65c(j)  
+        0021a6e0 00 00 a2 8e     lw         _row_value,0x0(s5)=>INT_ARRAY_003f4c38
+                             LAB_0021a6e4                                    XREF[1]:     0021a6d4(j)  
+        0021a6e4 04 00 b5 26     addiu      s5,s5,0x4
+        0021a6e8 2d 48 60 02     move       t1,s3
+        0021a6ec 1c 00 73 26     addiu      s3,s3,0x1c
+        0021a6f0 2d 28 20 02     move       a1,s1
+        0021a6f4 2d 20 80 02     move       handle?,s4
+        0021a6f8 02 00 06 24     li         a2,0x2
+        0021a6fc 2d 38 00 00     move       a3,zero
+        0021a700 0b 00 08 24     li         t0,0xb
+        0021a704 8e 00 0a 24     li         t2,0x8e
+        0021a708 1b 00 0b 24     li         t3,0x1b
+        0021a70c 01 00 52 26     addiu      i,i,0x1
+        0021a710 3c 1e 08 0c     jal        RenderConfigMenuRowValueBox                      undefined RenderConfigMenuRowVal
+        0021a714 00 00 a2 af     _sw        _row_value,0x0(sp)=>local_80
+        0021a718 08 00 42 2a     slti       _row_value,i,0x8
+        0021a71c cc ff 40 54     bnel       _row_value,zero,LAB_0021a650
+        0021a720 00 00 c2 8e     _lw        _row_value,0x0(s6)=>CONFIG_MENU_SELECTED_INDEX   = ??
+        0021a724 3f 00 03 3c     lui        v1,0x3f
+        0021a728 b8 34 62 8c     lw         _row_value,offset MENU_ROW_VALUES_ARRAY_PTR(v1)  = 00000000
+        0021a72c 24 2d c3 8f     lw         v1,offset CONFIG_MENU_SELECTED_INDEX(s8)         = ??
+                             Render Config Menu Row Options
+        0021a730 05 00 60 14     bne        v1,zero,LAB_0021a748
+        0021a734 00 00 51 8c     _lw        s1,0x0(_row_value)
+        0021a738 3f 00 02 3c     lui        _row_value,0x3f
+        0021a73c c0 18 11 00     sll        v1,s1,0x3
+        0021a740 04 00 00 10     b          LAB_0021a754
+        0021a744 68 4c 42 24     _addiu     pRowBackgroundStyles,pRowBackgroundStyles,0x4c68
+                             LAB_0021a748                                    XREF[1]:     0021a730(j)  
+        0021a748 3f 00 02 3c     lui        pRowBackgroundStyles,0x3f
+        0021a74c c0 18 11 00     sll        v1,s1,0x3
+        0021a750 78 4c 42 24     addiu      pRowBackgroundStyles,pRowBackgroundStyles,0x4c78
+                             LAB_0021a754                                    XREF[1]:     0021a740(j)  
+        0021a754 21 28 62 00     addu       a1,v1,pRowBackgroundStyles
+        0021a758 2d 18 a0 00     move       v1,a1
+        0021a75c 04 00 a2 8c     lw         pRowBackgroundStyles,0x4(a1)=>CONFIG_MENU_SELE
+        0021a760 00 00 64 8c     lw         handle?,0x0(v1)=>CONFIG_MENU_SELECTED_ROW_BACK
+        0021a764 14 00 a2 af     sw         pRowBackgroundStyles,local_6c(sp)
+        0021a768 10 00 a4 af     sw         handle?,local_70(sp)
+        0021a76c 10 00 a5 8f     lw         a1,local_70(sp)
+        0021a770 27 01 02 24     li         pRowBackgroundStyles,0x127
+        0021a774 2d 20 80 02     move       handle?,s4
+        0021a778 02 00 06 24     li         a2,0x2
+        0021a77c 02 00 07 24     li         a3,0x2
+        0021a780 9f 00 08 24     li         t0,0x9f
+        0021a784 47 00 09 24     li         t1,0x47
+        0021a788 a2 00 0a 24     li         t2,0xa2
+        0021a78c f0 00 0b 24     li         t3,0xf0
+        0021a790 3c 1e 08 0c     jal        RenderConfigMenuRowValueBox                      undefined RenderConfigMenuRowVal
+        0021a794 00 00 a2 af     _sw        pRowBackgroundStyles,0x0(sp)=>local_80
+        0021a798 28 01 02 24     li         pRowBackgroundStyles,0x128
+        0021a79c 14 00 a5 8f     lw         a1,local_6c(sp)
+        0021a7a0 2d 20 80 02     move       handle?,s4
+        0021a7a4 02 00 06 24     li         a2,0x2
+        0021a7a8 02 00 07 24     li         a3,0x2
+        0021a7ac 47 01 08 24     li         t0,0x147
+        0021a7b0 47 00 09 24     li         t1,0x47
+        0021a7b4 a2 00 0a 24     li         t2,0xa2
+        0021a7b8 98 01 0b 24     li         t3,0x198
+        0021a7bc 3c 1e 08 0c     jal        RenderConfigMenuRowValueBox                      undefined RenderConfigMenuRowVal
+        0021a7c0 00 00 a2 af     _sw        pRowBackgroundStyles,0x0(sp)=>local_80
+        0021a7c4 3f 00 02 3c     lui        pRowBackgroundStyles,0x3f
+        0021a7c8 01 00 04 24     li         handle?,0x1
+        0021a7cc b8 34 43 8c     lw         v1,offset MENU_ROW_VALUES_ARRAY_PTR(pRowBackgr   = 00000000
+        0021a7d0 24 2d c2 8f     lw         pRowBackgroundStyles,offset CONFIG_MENU_SELECT   = ??
+        0021a7d4 06 00 44 14     bne        pRowBackgroundStyles,handle?,LAB_0021a7f0
+        0021a7d8 04 00 71 8c     _lw        s1,0x4(v1)
+        0021a7dc 3f 00 02 3c     lui        pRowBackgroundStyles,0x3f
+        0021a7e0 c0 18 11 00     sll        v1,s1,0x3
+        0021a7e4 05 00 00 10     b          LAB_0021a7fc
+        0021a7e8 68 4c 42 24     _addiu     pRowBackgroundStyles,pRowBackgroundStyles,0x4c68
+        0021a7ec 00              ??         00h
+        0021a7ed 00              ??         00h
+        0021a7ee 00              ??         00h                                              ?  ->  003f0000
+        0021a7ef 00              ??         00h
+                             LAB_0021a7f0                                    XREF[1]:     0021a7d4(j)  
+        0021a7f0 3f 00 02 3c     lui        pRowBackgroundStyles,0x3f
+        0021a7f4 c0 18 11 00     sll        v1,s1,0x3
+        0021a7f8 78 4c 42 24     addiu      pRowBackgroundStyles,pRowBackgroundStyles,0x4c78
+                             LAB_0021a7fc                                    XREF[1]:     0021a7e4(j)  
+        0021a7fc 21 28 62 00     addu       a1,v1,pRowBackgroundStyles
+        0021a800 2d 18 a0 00     move       v1,a1
+        0021a804 04 00 a2 8c     lw         pRowBackgroundStyles,0x4(a1)=>CONFIG_MENU_SELE
+        0021a808 00 00 64 8c     lw         handle?,0x0(v1)=>CONFIG_MENU_SELECTED_ROW_BACK
+        0021a80c 14 00 a2 af     sw         pRowBackgroundStyles,local_6c(sp)
+        0021a810 10 00 a4 af     sw         handle?,local_70(sp)
+        0021a814 10 00 a5 8f     lw         a1,local_70(sp)
+        0021a818 2c 01 02 24     li         pRowBackgroundStyles,0x12c
+        0021a81c 2d 20 80 02     move       handle?,s4
+        0021a820 02 00 06 24     li         a2,0x2
+        0021a824 02 00 07 24     li         a3,0x2
+        0021a828 9f 00 08 24     li         t0,0x9f
+        0021a82c 63 00 09 24     li         t1,0x63
+        0021a830 a2 00 0a 24     li         t2,0xa2
+        0021a834 f0 00 0b 24     li         t3,0xf0
+        0021a838 3c 1e 08 0c     jal        RenderConfigMenuRowValueBox                      undefined RenderConfigMenuRowVal
+        0021a83c 00 00 a2 af     _sw        pRowBackgroundStyles,0x0(sp)=>local_80
+        0021a840 2d 01 02 24     li         pRowBackgroundStyles,0x12d
+        0021a844 14 00 a5 8f     lw         a1,local_6c(sp)
+        0021a848 2d 20 80 02     move       handle?,s4
+        0021a84c 02 00 06 24     li         a2,0x2
+        0021a850 02 00 07 24     li         a3,0x2
+        0021a854 47 01 08 24     li         t0,0x147
+        0021a858 63 00 09 24     li         t1,0x63
+        0021a85c a2 00 0a 24     li         t2,0xa2
+        0021a860 98 01 0b 24     li         t3,0x198
+        0021a864 3c 1e 08 0c     jal        RenderConfigMenuRowValueBox                      undefined RenderConfigMenuRowVal
+        0021a868 00 00 a2 af     _sw        pRowBackgroundStyles,0x0(sp)=>local_80
+        0021a86c 3f 00 02 3c     lui        pRowBackgroundStyles,0x3f
+        0021a870 02 00 04 24     li         handle?,0x2
+        0021a874 b8 34 43 8c     lw         v1,offset MENU_ROW_VALUES_ARRAY_PTR(pRowBackgr   = 00000000
+        0021a878 24 2d c2 8f     lw         pRowBackgroundStyles,offset CONFIG_MENU_SELECT   = ??
+        0021a87c 06 00 44 14     bne        pRowBackgroundStyles,handle?,LAB_0021a898
+        0021a880 08 00 71 8c     _lw        s1,0x8(v1)
+        0021a884 3f 00 02 3c     lui        pRowBackgroundStyles,0x3f
+        0021a888 c0 18 11 00     sll        v1,s1,0x3
+        0021a88c 05 00 00 10     b          LAB_0021a8a4
+        0021a890 68 4c 42 24     _addiu     pRowBackgroundStyles,pRowBackgroundStyles,0x4c68
+        0021a894 00              ??         00h
+        0021a895 00              ??         00h
+        0021a896 00              ??         00h                                              ?  ->  003f0000
+        0021a897 00              ??         00h
+                             LAB_0021a898                                    XREF[1]:     0021a87c(j)  
+        0021a898 3f 00 02 3c     lui        pRowBackgroundStyles,0x3f
+        0021a89c c0 18 11 00     sll        v1,s1,0x3
+        0021a8a0 78 4c 42 24     addiu      pRowBackgroundStyles,pRowBackgroundStyles,0x4c78
+                             LAB_0021a8a4                                    XREF[1]:     0021a88c(j)  
+        0021a8a4 21 28 62 00     addu       a1,v1,pRowBackgroundStyles
+        0021a8a8 2d 18 a0 00     move       v1,a1
+        0021a8ac 04 00 a2 8c     lw         pRowBackgroundStyles,0x4(a1)=>CONFIG_MENU_SELE
+        0021a8b0 00 00 64 8c     lw         handle?,0x0(v1)=>CONFIG_MENU_SELECTED_ROW_BACK
+        0021a8b4 14 00 a2 af     sw         pRowBackgroundStyles,local_6c(sp)
+        0021a8b8 10 00 a4 af     sw         handle?,local_70(sp)
+        0021a8bc 10 00 a5 8f     lw         a1,local_70(sp)
+        0021a8c0 30 01 02 24     li         pRowBackgroundStyles,0x130
+        0021a8c4 2d 20 80 02     move       handle?,s4
+        0021a8c8 02 00 06 24     li         a2,0x2
+        0021a8cc 02 00 07 24     li         a3,0x2
+        0021a8d0 9f 00 08 24     li         t0,0x9f
+        0021a8d4 7f 00 09 24     li         t1,0x7f
+        0021a8d8 a2 00 0a 24     li         t2,0xa2
+        0021a8dc f0 00 0b 24     li         t3,0xf0
+        0021a8e0 3c 1e 08 0c     jal        RenderConfigMenuRowValueBox                      undefined RenderConfigMenuRowVal
+        0021a8e4 00 00 a2 af     _sw        pRowBackgroundStyles,0x0(sp)=>local_80
+        0021a8e8 31 01 02 24     li         pRowBackgroundStyles,0x131
+        0021a8ec 14 00 a5 8f     lw         a1,local_6c(sp)
+        0021a8f0 2d 20 80 02     move       handle?,s4
+        0021a8f4 02 00 06 24     li         a2,0x2
+        0021a8f8 02 00 07 24     li         a3,0x2
+        0021a8fc 47 01 08 24     li         t0,0x147
+        0021a900 7f 00 09 24     li         t1,0x7f
+        0021a904 a2 00 0a 24     li         t2,0xa2
+        0021a908 98 01 0b 24     li         t3,0x198
+        0021a90c 3c 1e 08 0c     jal        RenderConfigMenuRowValueBox                      undefined RenderConfigMenuRowVal
+        0021a910 00 00 a2 af     _sw        pRowBackgroundStyles,0x0(sp)=>local_80
+        0021a914 3f 00 02 3c     lui        pRowBackgroundStyles,0x3f
+        0021a918 03 00 04 24     li         handle?,0x3
+        0021a91c b8 34 43 8c     lw         v1,offset MENU_ROW_VALUES_ARRAY_PTR(pRowBackgr   = 00000000
+        0021a920 24 2d c2 8f     lw         pRowBackgroundStyles,offset CONFIG_MENU_SELECT   = ??
+        0021a924 06 00 44 14     bne        pRowBackgroundStyles,handle?,LAB_0021a940
+        0021a928 10 00 71 8c     _lw        s1,0x10(v1)
+        0021a92c 3f 00 02 3c     lui        pRowBackgroundStyles,0x3f
+        0021a930 c0 18 11 00     sll        v1,s1,0x3
+        0021a934 05 00 00 10     b          LAB_0021a94c
+        0021a938 68 4c 42 24     _addiu     pRowBackgroundStyles,pRowBackgroundStyles,0x4c68
+        0021a93c 00              ??         00h
+        0021a93d 00              ??         00h
+        0021a93e 00              ??         00h                                              ?  ->  003f0000
+        0021a93f 00              ??         00h
+                             LAB_0021a940                                    XREF[1]:     0021a924(j)  
+        0021a940 3f 00 02 3c     lui        pRowBackgroundStyles,0x3f
+        0021a944 c0 18 11 00     sll        v1,s1,0x3
+        0021a948 78 4c 42 24     addiu      pRowBackgroundStyles,pRowBackgroundStyles,0x4c78
+                             LAB_0021a94c                                    XREF[1]:     0021a934(j)  
+        0021a94c 21 28 62 00     addu       a1,v1,pRowBackgroundStyles
+        0021a950 2d 18 a0 00     move       v1,a1
+        0021a954 04 00 a2 8c     lw         pRowBackgroundStyles,0x4(a1)=>CONFIG_MENU_SELE
+        0021a958 00 00 64 8c     lw         handle?,0x0(v1)=>CONFIG_MENU_SELECTED_ROW_BACK
+        0021a95c 14 00 a2 af     sw         pRowBackgroundStyles,local_6c(sp)
+        0021a960 10 00 a4 af     sw         handle?,local_70(sp)
+        0021a964 10 00 a5 8f     lw         a1,local_70(sp)
+        0021a968 38 01 02 24     li         pRowBackgroundStyles,0x138
+        0021a96c 2d 20 80 02     move       handle?,s4
+        0021a970 02 00 06 24     li         a2,0x2
+        0021a974 02 00 07 24     li         a3,0x2
+        0021a978 9f 00 08 24     li         t0,0x9f
+        0021a97c 9b 00 09 24     li         t1,0x9b
+        0021a980 a2 00 0a 24     li         t2,0xa2
+        0021a984 f0 00 0b 24     li         t3,0xf0
+        0021a988 3c 1e 08 0c     jal        RenderConfigMenuRowValueBox                      undefined RenderConfigMenuRowVal
+        0021a98c 00 00 a2 af     _sw        pRowBackgroundStyles,0x0(sp)=>local_80
+        0021a990 39 01 02 24     li         pRowBackgroundStyles,0x139
+        0021a994 14 00 a5 8f     lw         a1,local_6c(sp)
+        0021a998 2d 20 80 02     move       handle?,s4
+        0021a99c 02 00 06 24     li         a2,0x2
+        0021a9a0 02 00 07 24     li         a3,0x2
+        0021a9a4 47 01 08 24     li         t0,0x147
+        0021a9a8 9b 00 09 24     li         t1,0x9b
+        0021a9ac a2 00 0a 24     li         t2,0xa2
+        0021a9b0 98 01 0b 24     li         t3,0x198
+        0021a9b4 3c 1e 08 0c     jal        RenderConfigMenuRowValueBox                      undefined RenderConfigMenuRowVal
+        0021a9b8 00 00 a2 af     _sw        pRowBackgroundStyles,0x0(sp)=>local_80
+        0021a9bc 3f 00 02 3c     lui        pRowBackgroundStyles,0x3f
+        0021a9c0 04 00 04 24     li         handle?,0x4
+        0021a9c4 b8 34 43 8c     lw         v1,offset MENU_ROW_VALUES_ARRAY_PTR(pRowBackgr   = 00000000
+        0021a9c8 24 2d c2 8f     lw         pRowBackgroundStyles,offset CONFIG_MENU_SELECT   = ??
+        0021a9cc 06 00 44 14     bne        pRowBackgroundStyles,handle?,LAB_0021a9e8
+        0021a9d0 14 00 71 8c     _lw        s1,0x14(v1)
+        0021a9d4 3f 00 02 3c     lui        pRowBackgroundStyles,0x3f
+        0021a9d8 c0 18 11 00     sll        v1,s1,0x3
+        0021a9dc 05 00 00 10     b          LAB_0021a9f4
+        0021a9e0 68 4c 42 24     _addiu     pRowBackgroundStyles,pRowBackgroundStyles,0x4c68
+        0021a9e4 00              ??         00h
+        0021a9e5 00              ??         00h
+        0021a9e6 00              ??         00h                                              ?  ->  003f0000
+        0021a9e7 00              ??         00h
+                             LAB_0021a9e8                                    XREF[1]:     0021a9cc(j)  
+        0021a9e8 3f 00 02 3c     lui        pRowBackgroundStyles,0x3f
+        0021a9ec c0 18 11 00     sll        v1,s1,0x3
+        0021a9f0 78 4c 42 24     addiu      pRowBackgroundStyles,pRowBackgroundStyles,0x4c78
+                             LAB_0021a9f4                                    XREF[1]:     0021a9dc(j)  
+        0021a9f4 21 28 62 00     addu       a1,v1,pRowBackgroundStyles
+        0021a9f8 2d 18 a0 00     move       v1,a1
+        0021a9fc 04 00 a2 8c     lw         pRowBackgroundStyles,0x4(a1)=>CONFIG_MENU_SELE
+        0021aa00 00 00 64 8c     lw         handle?,0x0(v1)=>CONFIG_MENU_SELECTED_ROW_BACK
+        0021aa04 14 00 a2 af     sw         pRowBackgroundStyles,local_6c(sp)
+        0021aa08 10 00 a4 af     sw         handle?,local_70(sp)
+        0021aa0c 10 00 a5 8f     lw         a1,local_70(sp)
+        0021aa10 3c 01 02 24     li         pRowBackgroundStyles,0x13c
+        0021aa14 2d 20 80 02     move       handle?,s4
+        0021aa18 02 00 06 24     li         a2,0x2
+        0021aa1c 02 00 07 24     li         a3,0x2
+        0021aa20 9f 00 08 24     li         t0,0x9f
+        0021aa24 b7 00 09 24     li         t1,0xb7
+        0021aa28 a2 00 0a 24     li         t2,0xa2
+        0021aa2c f0 00 0b 24     li         t3,0xf0
+        0021aa30 3c 1e 08 0c     jal        RenderConfigMenuRowValueBox                      undefined RenderConfigMenuRowVal
+        0021aa34 00 00 a2 af     _sw        pRowBackgroundStyles,0x0(sp)=>local_80
+        0021aa38 3d 01 02 24     li         pRowBackgroundStyles,0x13d
+        0021aa3c 14 00 a5 8f     lw         a1,local_6c(sp)
+        0021aa40 2d 20 80 02     move       handle?,s4
+        0021aa44 02 00 06 24     li         a2,0x2
+        0021aa48 02 00 07 24     li         a3,0x2
+        0021aa4c 47 01 08 24     li         t0,0x147
+        0021aa50 b7 00 09 24     li         t1,0xb7
+        0021aa54 a2 00 0a 24     li         t2,0xa2
+        0021aa58 98 01 0b 24     li         t3,0x198
+        0021aa5c 3c 1e 08 0c     jal        RenderConfigMenuRowValueBox                      undefined RenderConfigMenuRowVal
+        0021aa60 00 00 a2 af     _sw        pRowBackgroundStyles,0x0(sp)=>local_80
+        0021aa64 3f 00 02 3c     lui        pRowBackgroundStyles,0x3f
+        0021aa68 05 00 04 24     li         handle?,0x5
+        0021aa6c b8 34 43 8c     lw         v1,offset MENU_ROW_VALUES_ARRAY_PTR(pRowBackgr   = 00000000
+        0021aa70 24 2d c2 8f     lw         pRowBackgroundStyles,offset CONFIG_MENU_SELECT   = ??
+        0021aa74 06 00 44 14     bne        pRowBackgroundStyles,handle?,LAB_0021aa90
+        0021aa78 18 00 71 8c     _lw        s1,0x18(v1)
+        0021aa7c 3f 00 02 3c     lui        pRowBackgroundStyles,0x3f
+        0021aa80 c0 18 11 00     sll        v1,s1,0x3
+        0021aa84 05 00 00 10     b          LAB_0021aa9c
+        0021aa88 68 4c 42 24     _addiu     pRowBackgroundStyles,pRowBackgroundStyles,0x4c68
+        0021aa8c 00              ??         00h
+        0021aa8d 00              ??         00h
+        0021aa8e 00              ??         00h                                              ?  ->  003f0000
+        0021aa8f 00              ??         00h
+                             LAB_0021aa90                                    XREF[1]:     0021aa74(j)  
+        0021aa90 3f 00 02 3c     lui        pRowBackgroundStyles,0x3f
+        0021aa94 c0 18 11 00     sll        v1,s1,0x3
+        0021aa98 78 4c 42 24     addiu      pRowBackgroundStyles,pRowBackgroundStyles,0x4c78
+                             LAB_0021aa9c                                    XREF[1]:     0021aa84(j)  
+        0021aa9c 21 28 62 00     addu       a1,v1,pRowBackgroundStyles
+        0021aaa0 2d 18 a0 00     move       v1,a1
+        0021aaa4 04 00 a2 8c     lw         pRowBackgroundStyles,0x4(a1)=>CONFIG_MENU_SELE
+        0021aaa8 00 00 64 8c     lw         handle?,0x0(v1)=>CONFIG_MENU_SELECTED_ROW_BACK
+        0021aaac 14 00 a2 af     sw         pRowBackgroundStyles,local_6c(sp)
+        0021aab0 10 00 a4 af     sw         handle?,local_70(sp)
+        0021aab4 10 00 a5 8f     lw         a1,local_70(sp)
+        0021aab8 c4 01 02 24     li         pRowBackgroundStyles,0x1c4
+        0021aabc 2d 20 80 02     move       handle?,s4
+        0021aac0 02 00 06 24     li         a2,0x2
+        0021aac4 02 00 07 24     li         a3,0x2
+        0021aac8 9f 00 08 24     li         t0,0x9f
+        0021aacc d3 00 09 24     li         t1,0xd3
+        0021aad0 a2 00 0a 24     li         t2,0xa2
+        0021aad4 f0 00 0b 24     li         t3,0xf0
+        0021aad8 3c 1e 08 0c     jal        RenderConfigMenuRowValueBox                      undefined RenderConfigMenuRowVal
+        0021aadc 00 00 a2 af     _sw        pRowBackgroundStyles,0x0(sp)=>local_80
+        0021aae0 c5 01 02 24     li         pRowBackgroundStyles,0x1c5
+        0021aae4 14 00 a5 8f     lw         a1,local_6c(sp)
+        0021aae8 2d 20 80 02     move       handle?,s4
+        0021aaec 02 00 06 24     li         a2,0x2
+        0021aaf0 02 00 07 24     li         a3,0x2
+        0021aaf4 47 01 08 24     li         t0,0x147
+        0021aaf8 d3 00 09 24     li         t1,0xd3
+        0021aafc a2 00 0a 24     li         t2,0xa2
+        0021ab00 98 01 0b 24     li         t3,0x198
+        0021ab04 3c 1e 08 0c     jal        RenderConfigMenuRowValueBox                      undefined RenderConfigMenuRowVal
+        0021ab08 00 00 a2 af     _sw        pRowBackgroundStyles,0x0(sp)=>local_80
+        0021ab0c 3f 00 02 3c     lui        pRowBackgroundStyles,0x3f
+        0021ab10 06 00 04 24     li         handle?,0x6
+        0021ab14 b8 34 43 8c     lw         v1,offset MENU_ROW_VALUES_ARRAY_PTR(pRowBackgr   = 00000000
+        0021ab18 24 2d c2 8f     lw         pRowBackgroundStyles,offset CONFIG_MENU_SELECT   = ??
+        0021ab1c 04 00 44 14     bne        pRowBackgroundStyles,handle?,LAB_0021ab30
+        0021ab20 2c 00 71 8c     _lw        s1,0x2c(v1)
+        0021ab24 3f 00 02 3c     lui        pRowBackgroundStyles,0x3f
+        0021ab28 03 00 00 10     b          LAB_0021ab38
+        0021ab2c 68 4c 43 8c     _lw        v1,offset CONFIG_MENU_SELECTED_ROW_BACKGROUND_
+                             LAB_0021ab30                                    XREF[1]:     0021ab1c(j)  
+        0021ab30 3f 00 02 3c     lui        pRowBackgroundStyles,0x3f
+        0021ab34 78 4c 43 8c     lw         v1,offset CONFIG_MENU_DESELECTED_ROW_BACKGROUN
+                             LAB_0021ab38                                    XREF[1]:     0021ab28(j)  
+        0021ab38 10 00 a3 af     sw         v1,local_70(sp)
+        0021ab3c 80 10 11 00     sll        pRowBackgroundStyles,s1,0x2
+        0021ab40 10 00 a5 8f     lw         a1,local_70(sp)
+        0021ab44 3f 00 03 3c     lui        v1,0x3f
+        0021ab48 21 18 62 00     addu       v1,v1,pRowBackgroundStyles
+        0021ab4c 58 4c 63 8c     lw         v1,offset INT_ARRAY_003f4c58(v1)
+        0021ab50 2d 20 80 02     move       handle?,s4
+        0021ab54 02 00 06 24     li         a2,0x2
+        0021ab58 02 00 07 24     li         a3,0x2
+        0021ab5c 9f 00 08 24     li         t0,0x9f
+        0021ab60 ef 00 09 24     li         t1,0xef
+        0021ab64 4a 01 0a 24     li         t2,0x14a
+        0021ab68 44 01 0b 24     li         t3,0x144
+        0021ab6c 3c 1e 08 0c     jal        RenderConfigMenuRowValueBox                      undefined RenderConfigMenuRowVal
+        0021ab70 00 00 a3 af     _sw        v1,0x0(sp)=>local_80
+        0021ab74 24 2d c3 8f     lw         v1,offset CONFIG_MENU_SELECTED_INDEX(s8)         = ??
+        0021ab78 05 00 62 28     slti       pRowBackgroundStyles,v1,0x5
+                             Render L/R Arrow
+        0021ab7c 22 00 40 10     beq        pRowBackgroundStyles,zero,LAB_0021ac08
+        0021ab80 30 00 b0 df     _ld        s0,local_50(sp)
+        0021ab84 c0 10 03 00     sll        pRowBackgroundStyles,v1,0x3
+        0021ab88 2d 20 60 00     move       handle?,v1
+        0021ab8c 23 10 43 00     subu       pRowBackgroundStyles,pRowBackgroundStyles,v1
+        0021ab90 80 10 02 00     sll        pRowBackgroundStyles,pRowBackgroundStyles,0x2
+        0021ab94 56 64 08 0c     jal        GET_CONFIG_ROW_VALUE                             undefined GET_CONFIG_ROW_VALUE(u
+        0021ab98 4e 00 53 24     _addiu     y_coord,selected_row_value,0x4e
+        0021ab9c 0e 00 40 14     bne        selected_row_value,zero,LAB_0021abd8
+        0021aba0 2d 20 80 02     _move      handle?,s4
+        0021aba4 80 80 02 3c     lui        selected_row_value,0x8080
+        0021aba8 80 80 42 34     ori        selected_row_value,selected_row_value,0x8080
+        0021abac 2d 30 60 02     move       a2,y_coord
+        0021abb0 30 01 05 24     li         a1,0x130
+        0021abb4 2d 38 00 00     move       a3,zero
+        0021abb8 2d 40 00 00     move       t0,zero
+        0021abbc 10 00 09 24     li         t1,0x10
+        0021abc0 2d 50 00 00     move       t2,zero
+        0021abc4 2d 58 40 00     move       t3,selected_row_value
+        0021abc8 c2 f0 07 0c     jal        RenderConfigMenuArrow_Alias                      int RenderConfigMenuArrow_Alias(
+        0021abcc 00 00 a2 af     _sw        selected_row_value,0x0(sp)=>local_80
+        0021abd0 0d 00 00 10     b          LAB_0021ac08
+        0021abd4 30 00 b0 df     _ld        s0,local_50(sp)
+                             LAB_0021abd8                                    XREF[1]:     0021ab9c(j)  
+        0021abd8 80 80 02 3c     lui        selected_row_value,0x8080
+        0021abdc 80 80 42 34     ori        selected_row_value,selected_row_value,0x8080
+        0021abe0 2d 30 60 02     move       a2,y_coord
+        0021abe4 4f 01 05 24     li         a1,0x14f
+        0021abe8 2d 38 00 00     move       a3,zero
+        0021abec 2d 40 00 00     move       t0,zero
+        0021abf0 0f 00 09 24     li         t1,0xf
+        0021abf4 2d 50 00 00     move       t2,zero
+        0021abf8 2d 58 40 00     move       t3,selected_row_value
+        0021abfc c2 f0 07 0c     jal        RenderConfigMenuArrow_Alias                      int RenderConfigMenuArrow_Alias(
+        0021ac00 00 00 a2 af     _sw        selected_row_value,0x0(sp)=>local_80
+        0021ac04 30 00 b0 df     ld         s0,local_50(sp)
+                             LAB_0021ac08                                    XREF[2]:     0021ab7c(j), 0021abd0(j)  
+        0021ac08 38 00 b1 df     ld         s1,local_48(sp)
+        0021ac0c 40 00 b2 df     ld         i,local_40(sp)
+        0021ac10 48 00 b3 df     ld         y_coord,local_38(sp)
+        0021ac14 50 00 b4 df     ld         s4,local_30(sp)
+        0021ac18 58 00 b5 df     ld         s5,local_28(sp)
+        0021ac1c 60 00 b6 df     ld         s6,local_20(sp)
+        0021ac20 68 00 b7 df     ld         s7,local_18(sp)
+        0021ac24 70 00 be df     ld         s8,local_10(sp)
+        0021ac28 78 00 bf df     ld         ra,local_8(sp)
+        0021ac2c 08 00 e0 03     jr         ra
+        0021ac30 80 00 bd 27     _addiu     sp,sp,0x80

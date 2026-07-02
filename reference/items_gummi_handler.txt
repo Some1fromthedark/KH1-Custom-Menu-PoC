@@ -1,0 +1,215 @@
+                             **************************************************************
+                             *                          FUNCTION                          *
+                             **************************************************************
+                             undefined __stdcall ItemsGummiMenuOnFrame(MenuHandle * h
+             undefined         <UNASSIGNED>   <RETURN>
+             MenuHandle *      a0_lo:4        handle
+             undefined4        v0_lo:4        unique_gummi_block_count                XREF[7]:     0020fc88(W), 
+                                                                                                   0020fca8(W), 
+                                                                                                   0020fd08(W), 
+                                                                                                   0020fd84(W), 
+                                                                                                   0020fdd8(W), 
+                                                                                                   0020fde4(W), 
+                                                                                                   0020fdf0(W)  
+             undefined8        v0:8           block_count                             XREF[6]:     0020fca8(W), 
+                                                                                                   0020fd08(W), 
+                                                                                                   0020fd84(W), 
+                                                                                                   0020fdd8(W), 
+                                                                                                   0020fde4(W), 
+                                                                                                   0020fdf0(W)  
+             undefined4        s2_lo:4        gummi_count                             XREF[1]:     0020fcb0(W)  
+             long              v0:8           is_valid                                XREF[5]:     0020fd08(W), 
+                                                                                                   0020fd84(W), 
+                                                                                                   0020fdd8(W), 
+                                                                                                   0020fde4(W), 
+                                                                                                   0020fdf0(W)  
+             undefined4        s1_lo:4        _handle                                 XREF[1]:     0020fd10(W)  
+             int               v0_lo:4        selected_row_index                      XREF[4]:     0020fd84(W), 
+                                                                                                   0020fdd8(W), 
+                                                                                                   0020fde4(W), 
+                                                                                                   0020fdf0(W)  
+             int               v0_lo:4        selected_row_relative                   XREF[3]:     0020fdd8(W), 
+                                                                                                   0020fde4(W), 
+                                                                                                   0020fdf0(W)  
+             int               v0_lo:4        page_index                              XREF[2]:     0020fde4(W), 
+                                                                                                   0020fdf0(W)  
+             long              v0:8           unk                                     XREF[1]:     0020fdf0(W)  
+             undefined4        s3_lo:4        pGummiCount                             XREF[1]:     0020fe20(W)  
+             undefined8        Stack[-0x10]:8 local_10                                XREF[2]:     0020fc84(W), 
+                                                                                                   0020fe94(R)  
+             undefined8        Stack[-0x18]:8 local_18                                XREF[2]:     0020fc70(W), 
+                                                                                                   0020fe90(R)  
+             undefined8        Stack[-0x20]:8 local_20                                XREF[2]:     0020fc80(W), 
+                                                                                                   0020fe8c(R)  
+             undefined8        Stack[-0x28]:8 local_28                                XREF[2]:     0020fc7c(W), 
+                                                                                                   0020fe88(R)  
+             undefined8        Stack[-0x30]:8 local_30                                XREF[2]:     0020fc78(W), 
+                                                                                                   0020fe84(R)  
+             undefined8        Stack[-0x38]:8 local_38                                XREF[2]:     0020fc74(W), 
+                                                                                                   0020fe80(R)  
+             undefined8        Stack[-0x40]:8 local_40                                XREF[2]:     0020fc68(W), 
+                                                                                                   0020fe7c(R)  
+             undefined8        Stack[-0x48]:8 local_48                                XREF[2]:     0020fc60(W), 
+                                                                                                   0020fe78(R)  
+             undefined8        Stack[-0x50]:8 local_50                                XREF[3]:     0020fc5c(W), 
+                                                                                                   0020fce8(R), 
+                                                                                                   0020fe74(R)  
+             undefined1[768]   Stack[-0x350   gummi_menu_inventory                    XREF[1]:     0020fccc(W)  
+                             ItemsGummiMenuOnFrame                           XREF[1]:     ItemsMenuLayer2OnFrame:0020fee0(
+        0020fc58 b0 fc bd 27     addiu      sp,sp,-0x350
+        0020fc5c 00 03 b0 ff     sd         s0,local_50(sp)
+        0020fc60 08 03 b1 ff     sd         s1,local_48(sp)
+        0020fc64 2d 88 80 00     move       s1,handle
+        0020fc68 10 03 b2 ff     sd         s2,local_40(sp)
+        0020fc6c 2d 90 00 00     move       s2,zero
+        0020fc70 38 03 b7 ff     sd         s7,local_18(sp)
+        0020fc74 18 03 b3 ff     sd         s3,local_38(sp)
+        0020fc78 20 03 b4 ff     sd         s4,local_30(sp)
+        0020fc7c 28 03 b5 ff     sd         s5,local_28(sp)
+        0020fc80 30 03 b6 ff     sd         s6,local_20(sp)
+        0020fc84 40 03 bf ff     sd         ra,local_10(sp)
+        0020fc88 f6 e8 06 0c     jal        GetUniqueGummiBlockCountAlias                    undefined4 GetUniqueGummiBlockCo
+        0020fc8c 64 00 17 3c     _lui       s7,0x64
+        0020fc90 2d 80 40 00     move       s0,unique_gummi_block_count
+        0020fc94 98 1b e2 26     addiu      unique_gummi_block_count,s7,0x1b98
+        0020fc98 11 00 00 1a     blez       s0,LAB_0020fce0
+        0020fc9c 00 00 40 ac     _sw        zero,0x0(unique_gummi_block_count)=>MENU_ROW_C   = ??
+        0020fca0 2d 98 40 00     move       s3,unique_gummi_block_count
+        0020fca4 00 00 00 00     nop
+                             LAB_0020fca8                                    XREF[1]:     0020fcd8(j)  
+        0020fca8 fc e8 06 0c     jal        GetInventoryGummiBlockCount                      undefined GetInventoryGummiBlock
+        0020fcac 2d 20 40 02     _move      handle,s2
+        0020fcb0 08 00 40 50     beql       block_count,zero,LAB_0020fcd4
+        0020fcb4 01 00 52 26     _addiu     gummi_count,gummi_count,0x1
+        0020fcb8 00 00 62 8e     lw         block_count,0x0(s3)=>MENU_ROW_COUNT              = ??
+        0020fcbc 01 00 44 24     addiu      handle,block_count,0x1
+        0020fcc0 80 10 02 00     sll        block_count,block_count,0x2
+        0020fcc4 21 18 a2 03     addu       v1,sp,block_count
+        0020fcc8 00 00 64 ae     sw         handle,0x0(s3)=>MENU_ROW_COUNT                   = ??
+        0020fccc 00 00 72 ac     sw         gummi_count,0x0(v1)=>gummi_menu_inventory[0]
+        0020fcd0 01 00 52 26     addiu      gummi_count,gummi_count,0x1
+                             LAB_0020fcd4                                    XREF[1]:     0020fcb0(j)  
+        0020fcd4 2a 10 50 02     slt        block_count,gummi_count,s0
+        0020fcd8 f3 ff 40 14     bne        block_count,zero,LAB_0020fca8
+        0020fcdc 00 00 00 00     _nop
+                             LAB_0020fce0                                    XREF[1]:     0020fc98(j)  
+        0020fce0 98 1b e5 8e     lw         a1,offset MENU_ROW_COUNT(s7)                     = ??
+        0020fce4 64 00 a0 50     beql       a1,zero,LAB_0020fe78
+        0020fce8 00 03 b0 df     _ld        s0,local_50(sp)
+        0020fcec 78 f5 07 0c     jal        InitMenuPages                                    undefined InitMenuPages(MenuHand
+        0020fcf0 2d 20 20 02     _move      handle,s1
+        0020fcf4 2d 20 20 02     move       handle,s1
+        0020fcf8 84 f5 07 0c     jal        set_handle_field168_0xce                         undefined set_handle_field168_0x
+        0020fcfc 08 00 05 24     _li        a1,0x8
+        0020fd00 a2 f5 07 0c     jal        FUN_001fd688                                     undefined FUN_001fd688(MenuHandl
+        0020fd04 2d 20 20 02     _move      handle,s1
+        0020fd08 ae d0 07 0c     jal        is_valid_handle                                  long is_valid_handle(MenuHandle 
+        0020fd0c 2d 20 20 02     _move      handle,s1
+        0020fd10 2e 00 40 10     beq        is_valid,zero,LAB_0020fdcc
+        0020fd14 42 00 02 3c     _lui       is_valid,0x42
+        0020fd18 c8 5b 44 8c     lw         handle,offset MENU_INPUT_HANDLER_PTR(is_valid)   = 00000000
+        0020fd1c 08 00 83 8c     lw         v1,handle->field2_0x8(a0)
+        0020fd20 00 40 63 30     andi       v1,v1,0x4000
+        0020fd24 08 00 60 10     beq        v1,zero,LAB_0020fd48
+        0020fd28 00 00 00 00     _nop
+        0020fd2c d6 cd 07 0c     jal        FUN_001f3758                                     undefined FUN_001f3758()
+        0020fd30 2d 20 20 02     _move      handle,_handle
+        0020fd34 da 75 04 0c     jal        PlaySound                                        undefined PlaySound()
+        0020fd38 03 00 04 24     _li        handle,0x3
+        0020fd3c 64 00 02 3c     lui        is_valid,0x64
+        0020fd40 22 00 00 10     b          LAB_0020fdcc
+        0020fd44 24 12 40 ac     _sw        zero,offset DISPLAYED_MENU_DEPTH(is_valid)       = ??
+                             LAB_0020fd48                                    XREF[1]:     0020fd24(j)  
+        0020fd48 16 f6 07 0c     jal        HandlePagedMenuInputsForOrb                      undefined HandlePagedMenuInputsF
+        0020fd4c 2d 20 20 02     _move      handle,_handle
+        0020fd50 2d 20 20 02     move       handle,_handle
+        0020fd54 46 2f 08 0c     jal        FUN_0020bd18                                     undefined FUN_0020bd18(MenuHandl
+        0020fd58 08 00 05 24     _li        a1,0x8
+        0020fd5c 64 00 05 3c     lui        a1,0x64
+        0020fd60 d0 00 23 96     lhu        v1,0xd0(_handle)
+        0020fd64 64 00 06 3c     lui        a2,0x64
+        0020fd68 2d 20 20 02     move       handle,_handle
+        0020fd6c 00 1c 03 00     sll        v1,v1,0x10
+        0020fd70 03 1d 03 00     sra        v1,v1,0x14
+        0020fd74 6c 12 a3 ac     sw         v1,offset ITEMS_GUMMI_MENU_PAGE_START_ROW(a1)    = ??
+        0020fd78 d2 00 22 96     lhu        is_valid,0xd2(_handle)
+        0020fd7c 00 14 02 00     sll        is_valid,is_valid,0x10
+        0020fd80 03 15 02 00     sra        is_valid,is_valid,0x14
+        0020fd84 52 f5 07 0c     jal        GetHandleGlobalSelectedRow                       undefined GetHandleGlobalSelecte
+        0020fd88 70 12 c2 ac     _sw        selected_row_index,offset ITEMS_GUMMI_MENU_SEL   = ??
+        0020fd8c 80 10 02 00     sll        selected_row_index,selected_row_index,0x2
+        0020fd90 10 00 30 8e     lw         s0,0x10(_handle)
+        0020fd94 21 18 a2 03     addu       v1,sp,selected_row_index
+        0020fd98 04 00 00 12     beq        s0,zero,LAB_0020fdac
+        0020fd9c 00 00 64 8c     _lw        handle,0x0(v1)
+        0020fda0 9a e8 06 0c     jal        FUN_001ba268                                     undefined FUN_001ba268()
+        0020fda4 00 00 00 00     _nop
+        0020fda8 40 00 02 ae     sw         selected_row_index,0x40(s0)
+                             LAB_0020fdac                                    XREF[1]:     0020fd98(j)  
+        0020fdac 5c f9 07 0c     jal        FUN_001fe570                                     undefined FUN_001fe570(undefined
+        0020fdb0 2d 20 20 02     _move      handle,_handle
+        0020fdb4 06 00 40 50     beql       selected_row_index,zero,LAB_0020fdd0
+        0020fdb8 2d 20 20 02     _move      handle,_handle
+        0020fdbc d6 cd 07 0c     jal        FUN_001f3758                                     undefined FUN_001f3758()
+        0020fdc0 2d 20 20 02     _move      handle,_handle
+        0020fdc4 64 00 03 3c     lui        v1,0x64
+        0020fdc8 24 12 60 ac     sw         zero,offset DISPLAYED_MENU_DEPTH(v1)             = ??
+                             LAB_0020fdcc                                    XREF[2]:     0020fd10(j), 0020fd40(j)  
+        0020fdcc 2d 20 20 02     move       handle,_handle
+                             LAB_0020fdd0                                    XREF[1]:     0020fdb4(j)  
+        0020fdd0 f0 0b 08 0c     jal        FUN_00202fc0                                     undefined FUN_00202fc0(MenuHandl
+        0020fdd4 2d 90 00 00     _move      gummi_count,zero
+        0020fdd8 46 f5 07 0c     jal        GetSelectedMenuRow                               undefined GetSelectedMenuRow(Men
+        0020fddc 2d 20 20 02     _move      handle,_handle
+        0020fde0 2d 20 20 02     move       handle,_handle
+        0020fde4 86 f5 07 0c     jal        GetMenuHandlePageIndex                           undefined GetMenuHandlePageIndex
+        0020fde8 2d b0 40 00     _move      s6,page_index
+        0020fdec 2d 20 20 02     move       handle,_handle
+        0020fdf0 64 f5 07 0c     jal        FUN_001fd590                                     undefined FUN_001fd590(MenuHandl
+        0020fdf4 2d 80 40 00     _move      s0,unk
+        0020fdf8 28 00 35 8e     lw         s5,0x28(_handle)
+        0020fdfc 2d 20 20 02     move       handle,_handle
+        0020fe00 b8 e3 07 0c     jal        FUN_001f8ee0                                     undefined FUN_001f8ee0()
+        0020fe04 2d a0 40 00     _move      s4,unk
+        0020fe08 98 1b e2 8e     lw         unk,offset MENU_ROW_COUNT(s7)                    = ??
+        0020fe0c 2a 10 02 02     slt        unk,s0,unk
+        0020fe10 16 00 40 10     beq        unk,zero,LAB_0020fe6c
+        0020fe14 80 10 10 00     _sll       unk,s0,0x2
+        0020fe18 21 98 5d 00     addu       s3,unk,sp
+        0020fe1c 00 00 69 8e     lw         t1,0x0(s3)
+                             LAB_0020fe20                                    XREF[1]:     0020fe64(j)  
+        0020fe20 04 00 73 26     addiu      pGummiCount,pGummiCount,0x4
+        0020fe24 03 00 a0 12     beq        s5,zero,LAB_0020fe34
+        0020fe28 02 00 05 24     _li        a1,0x2
+        0020fe2c 26 10 56 02     xor        unk,gummi_count,s6
+        0020fe30 01 00 45 2c     sltiu      a1,unk,0x1
+                             LAB_0020fe34                                    XREF[1]:     0020fe24(j)  
+        0020fe34 2d 38 80 02     move       a3,s4
+        0020fe38 1c 00 94 26     addiu      s4,s4,0x1c
+        0020fe3c 2d 20 20 02     move       handle,_handle
+        0020fe40 2d 30 00 00     move       a2,zero
+        0020fe44 a6 00 08 24     li         t0,0xa6
+        0020fe48 24 38 08 0c     jal        FUN_0020e090                                     undefined FUN_0020e090(MenuHandl
+        0020fe4c 01 00 52 26     _addiu     gummi_count,gummi_count,0x1
+        0020fe50 09 00 42 2a     slti       unk,gummi_count,0x9
+        0020fe54 05 00 40 10     beq        unk,zero,LAB_0020fe6c
+        0020fe58 01 00 10 26     _addiu     s0,s0,0x1
+        0020fe5c 98 1b e2 8e     lw         unk,offset MENU_ROW_COUNT(s7)                    = ??
+        0020fe60 2a 10 02 02     slt        unk,s0,unk
+        0020fe64 ee ff 40 54     bnel       unk,zero,LAB_0020fe20
+        0020fe68 00 00 69 8e     _lw        t1,0x0(pGummiCount)
+                             LAB_0020fe6c                                    XREF[2]:     0020fe10(j), 0020fe54(j)  
+        0020fe6c cc e3 07 0c     jal        FUN_001f8f30                                     undefined FUN_001f8f30()
+        0020fe70 00 00 00 00     _nop
+        0020fe74 00 03 b0 df     ld         s0,local_50(sp)
+                             LAB_0020fe78                                    XREF[1]:     0020fce4(j)  
+        0020fe78 08 03 b1 df     ld         _handle,local_48(sp)
+        0020fe7c 10 03 b2 df     ld         gummi_count,local_40(sp)
+        0020fe80 18 03 b3 df     ld         pGummiCount,local_38(sp)
+        0020fe84 20 03 b4 df     ld         s4,local_30(sp)
+        0020fe88 28 03 b5 df     ld         s5,local_28(sp)
+        0020fe8c 30 03 b6 df     ld         s6,local_20(sp)
+        0020fe90 38 03 b7 df     ld         s7,local_18(sp)
+        0020fe94 40 03 bf df     ld         ra,local_10(sp)
+        0020fe98 08 00 e0 03     jr         ra
+        0020fe9c 50 03 bd 27     _addiu     sp,sp,0x350
