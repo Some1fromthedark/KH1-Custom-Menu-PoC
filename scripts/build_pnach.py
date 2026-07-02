@@ -145,9 +145,9 @@ def emit_pnach(
         "description=Hook config options menu handler; custom rows + scrollbar PoC\n",
         "\n",
         "// --- Hook: redirect options menu handler pointer ---\n",
-        f"patch=2,EE,{encode_extended_addr(hook_addr, 4)},extended,{entry_addr:08X}\n",
+        f"patch=0,EE,{encode_extended_addr(hook_addr, 4)},extended,{entry_addr:08X}\n",
         "\n",
-        "// --- Code cave payload (boot-time write) ---\n",
+        "// --- Code cave payload ---\n",
     ]
 
     for offset in range(0, len(data), 4):
@@ -157,7 +157,7 @@ def emit_pnach(
         word = struct.unpack(">I", chunk)[0]
         addr = cave_base + offset
         lines.append(
-            f"patch=0,EE,{encode_extended_addr(addr, 4)},extended,{word:08X}\n"
+            f"patch=1,EE,{encode_extended_addr(addr, 4)},extended,{word:08X}\n"
         )
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
