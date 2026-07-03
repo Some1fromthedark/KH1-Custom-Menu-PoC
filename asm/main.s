@@ -14,4 +14,4 @@
         .globl cave_options_handler
 
 cave_entry:
-.include "asm/options_handler_vanilla_port.s"
+.include "asm/options_handler_modded.s"
