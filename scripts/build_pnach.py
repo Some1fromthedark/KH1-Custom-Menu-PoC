@@ -144,6 +144,7 @@ def emit_pnach(
     data: bytes,
     cave_base: int,
     hooks: list[tuple[int, int]],
+    patches: list[str],
     out_path: Path,
 ) -> None:
     lines = [
@@ -171,6 +172,12 @@ def emit_pnach(
         lines.append(
             f"patch=1,EE,{encode_extended_addr(addr, 4)},extended,{word:08X}\n"
         )
+        
+    lines.append("\n")
+    lines.append("// --- Patches ---\n")
+    
+    for patch_line in patches:
+        lines.append(f"{patch_line}\n")
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text("".join(lines), encoding="utf-8")
@@ -226,6 +233,8 @@ def load_hooks(config_data) -> list[tuple[int, str]]:
 
     return hooks
 
+def load_patches(config_data) -> list[str]:
+    return config_data.get("patches", [])
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Build BD3FB233 PNACH from EE assembly.")
@@ -284,7 +293,9 @@ def main() -> int:
             )
         )
     
-    emit_pnach(data, cave_base, resolved_hooks, args.output)
+    patches = load_patches(config_data)
+    
+    emit_pnach(data, cave_base, resolved_hooks, patches, args.output)
 
     print(f"PNACH -> {args.output}")
     return 0

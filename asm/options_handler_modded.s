@@ -22,6 +22,7 @@ custom_config_options_handler:
         /* 00219FB8 */ sd	$s7,104($sp)
         /* 00219FBC */ sd	$fp,112($sp)
         /* 00219FC0 */ sd	$ra,120($sp)
+        # Paged Menu Setup
         move $s4,$a0
         jal  0x1fd5e0
         li   $a1,0x1f
@@ -364,8 +365,10 @@ L_no_confirm_update_lr:
         /* 0021A4A4 */ li	$a1,8
         /* 0021A4A8 */ jal	0x20bd18
         /* 0021A4AC */ addiu	$s1,$fp,11556
-        /* 0021A4B0 */ jal	0x1fd518
-        /* 0021A4B4 */ move	$a0,$s4
+        # Properly get the relative selected row index to prevent flickering
+        lhu  $v0,0xd2($s4)
+        sll  $v0,$v0,16
+        sra  $v0,$v0,20
         /* 0021A4B8 */ move	$s5,$fp
         /* 0021A4BC */ move	$v1,$v0
         /* 0021A4C0 */ move	$s2,$zero
@@ -473,6 +476,9 @@ L_render_rows:
         /* 0021A634 */ addiu	$s6,$v0,11556
         /* 0021A638 */ addiu	$s5,$v1,19512
         /* 0021A63C */ li	$s3,71
+        # Add Scrollbar
+        jal  0x202fc0
+        move $a0,$s4
         /* 0021A640 */ move	$s2,$zero
         /* 0021A644 */ li	$s7,6
         /* 0021A648 */ lw	$v0,0($s6)
