@@ -25,7 +25,7 @@ custom_config_options_handler:
         # Paged Menu Setup
         move $s4,$a0
         jal  0x1fd5e0
-        li   $a1,0x1f
+        li   $a1,0x30
         move $a0,$s4
         jal  0x1fd610
         li   $a1,8
@@ -365,10 +365,9 @@ L_no_confirm_update_lr:
         /* 0021A4A4 */ li	$a1,8
         /* 0021A4A8 */ jal	0x20bd18
         /* 0021A4AC */ addiu	$s1,$fp,11556
-        # Properly get the relative selected row index to prevent flickering
-        lhu  $v0,0xd2($s4)
-        sll  $v0,$v0,16
-        sra  $v0,$v0,20
+        # Use Global Selected Row Index instead of Relative Index
+        jal  0x1fd548
+        /* 0021A4B4 */ move	$a0,$s4
         /* 0021A4B8 */ move	$s5,$fp
         /* 0021A4BC */ move	$v1,$v0
         /* 0021A4C0 */ move	$s2,$zero
@@ -475,18 +474,27 @@ L_render_rows:
         /* 0021A630 */ lui	$v1,0x3f
         /* 0021A634 */ addiu	$s6,$v0,11556
         /* 0021A638 */ addiu	$s5,$v1,19512
+        # Get page index
+        jal  0x1fd618
+        move $a0,$s4
+        sll  $v0,$v0,2
+        add  $s5,$s5,$v0
         /* 0021A63C */ li	$s3,71
         # Add Scrollbar
         jal  0x202fc0
         move $a0,$s4
         /* 0021A640 */ move	$s2,$zero
         /* 0021A644 */ li	$s7,6
-        /* 0021A648 */ lw	$v0,0($s6)
-        /* 0021A64C */ nop
+        # Get the relative selected row index
+        lw   $v0,0xd2($s4)
 L_0021A650:
+        sll  $v0,$v0,16
+        sra  $v0,$v0,20
         /* 0021A650 */ bne	$s2,$v0,L_0021A6E0
         /* 0021A654 */ move	$s1,$zero
-        /* 0021A658 */ slti	$v0,$s2,7
+        # Get global selected row index
+        lw   $v0,0($s6)
+        slti $v0,$v0,7
         /* 0021A65C */ beqzl	$v0,L_0021A6E0
         /* 0021A660 */ li	$s1,1
         /* 0021A664 */ addiu	$s0,$s3,12
@@ -535,23 +543,55 @@ L_0021A6E4:
         /* 0021A700 */ li	$t0,11
         /* 0021A704 */ li	$t2,142
         /* 0021A708 */ li	$t3,27
-        /* 0021A70C */ addiu	$s2,$s2,1
         /* 0021A710 */ jal	0x2078f0
         /* 0021A714 */ sw	$v0,0($sp)
-        /* 0021A718 */ slti	$v0,$s2,8
-        /* 0021A71C */ bnezl	$v0,L_0021A650
-        /* 0021A720 */ lw	$v0,0($s6)
+        
+
+        # Get global index for relative row index i
+        jal 0x1fd618
+        move $a0,$s4
+        add  $t2,$v0,$s2
+        sll  $t0,$t2,2
+        lui  $t1,%hi(config_options_row_value_counts)
+        addiu $t1,$t1,%lo(config_options_row_value_counts)
+        add  $t1,$t1,$t0
+        lw   $t1,0($t1)
         /* 0021A724 */ lui	$v1,0x3f
+        slti $t0,$t1,1
+        bnez $t0,L_done_rendering_rows
         /* 0021A728 */ lw	$v0,13496($v1)
-        /* 0021A72C */ lw	$v1,11556($fp)
-        /* 0021A730 */ bnez	$v1,L_0021A748
-        /* 0021A734 */ lw	$s1,0($v0)
+
+        # Get relative selected row index
+        lw   $v1,0xd2($s4)
+        sll  $v1,$v1,16
+        sra  $v1,$v1,20
+        sll  $t3,$t2,2
+        slti $t0,$t2,3
+        bnez $t0,L_skip_adjustment
+        add  $t3,$t3,$v0
+        addiu $t0,$t2,-6
+        bnez $t0,L_skip_adjustment
+        addiu $t3,$t3,4
+        slti $t0,$t2,8
+        bnez $t0,L_skip_adjustment
+        addiu $t3,$t3,16
+        lui  $t3,%hi(config_options_new_row_values)
+        addiu $t3,$t3,%lo(config_options_new_row_values)
+        addiu $t4,$t2,-8
+        sll  $t4,$t4,2
+        add  $t3,$t3,$t4
+L_skip_adjustment:
+        li   $t4,1
+        beq  $t1,$t4,L_check_is_selected
+        li   $s1,0
+        lw	 $s1,0($t3)
+L_check_is_selected:
+        bne	 $s2,$v1,L_0021A748
         /* 0021A738 */ lui	$v0,0x3f
         /* 0021A73C */ sll	$v1,$s1,0x3
         /* 0021A740 */ b	L_0021A754
         /* 0021A744 */ addiu	$v0,$v0,19560
 L_0021A748:
-        /* 0021A748 */ lui	$v0,0x3f
         /* 0021A74C */ sll	$v1,$s1,0x3
         /* 0021A750 */ addiu	$v0,$v0,19576
 L_0021A754:
@@ -561,283 +601,78 @@ L_0021A754:
         /* 0021A760 */ lw	$a0,0($v1)
         /* 0021A764 */ sw	$v0,20($sp)
         /* 0021A768 */ sw	$a0,16($sp)
+        lui  $v0,%hi(config_options_row_value_text_ids)
+        sll  $t4,$t2,3
+        add  $v0,$v0,$t4
         /* 0021A76C */ lw	$a1,16($sp)
-        /* 0021A770 */ li	$v0,295
         /* 0021A774 */ move	$a0,$s4
         /* 0021A778 */ li	$a2,2
         /* 0021A77C */ li	$a3,2
         /* 0021A780 */ li	$t0,159
-        /* 0021A784 */ li	$t1,71
         /* 0021A788 */ li	$t2,162
         /* 0021A78C */ li	$t3,240
+        li   $t4,2
+        beq  $t1,$t4,L_draw_options
+        lw   $v0,%lo(config_options_row_value_text_ids)($v0)
+        li   $t2,330
+        li   $t3,324
+L_draw_options:
+        sll  $t1,$s2,3
+        sub  $t1,$t1,$s2
+        sll  $t1,$t1,2
+        add  $t1,$t1,71
         /* 0021A790 */ jal	0x2078f0
         /* 0021A794 */ sw	$v0,0($sp)
-        /* 0021A798 */ li	$v0,296
+
+        # Get global index for relative row index i
+        jal 0x1fd618
+        move $a0,$s4
+        add  $t2,$v0,$s2
+        sll  $t0,$t2,2
+        lui  $t1,%hi(config_options_row_value_counts)
+        addiu $t1,$t1,%lo(config_options_row_value_counts)
+        add  $t1,$t1,$t0
+        lw   $t1,0($t1)
+        slti $t0,$t1,2
+        bnez $t0,L_done_rendering_rows
+        lui  $v0,%hi(config_options_row_value_text_ids)
+        
+        sll  $t4,$t2,3
+        add  $t4,$t4,4
+        add  $v0,$v0,$t4
         /* 0021A79C */ lw	$a1,20($sp)
         /* 0021A7A0 */ move	$a0,$s4
         /* 0021A7A4 */ li	$a2,2
         /* 0021A7A8 */ li	$a3,2
         /* 0021A7AC */ li	$t0,327
-        /* 0021A7B0 */ li	$t1,71
+        sll  $t1,$s2,3
+        sub  $t1,$t1,$s2
+        sll  $t1,$t1,2
+        add  $t1,$t1,71
         /* 0021A7B4 */ li	$t2,162
         /* 0021A7B8 */ li	$t3,408
+        lw   $v0,%lo(config_options_row_value_text_ids)($v0)
         /* 0021A7BC */ jal	0x2078f0
         /* 0021A7C0 */ sw	$v0,0($sp)
-        /* 0021A7C4 */ lui	$v0,0x3f
-        /* 0021A7C8 */ li	$a0,1
-        /* 0021A7CC */ lw	$v1,13496($v0)
-        /* 0021A7D0 */ lw	$v0,11556($fp)
-        /* 0021A7D4 */ bne	$v0,$a0,L_0021A7F0
-        /* 0021A7D8 */ lw	$s1,4($v1)
-        /* 0021A7DC */ lui	$v0,0x3f
-        /* 0021A7E0 */ sll	$v1,$s1,0x3
-        /* 0021A7E4 */ b	L_0021A7FC
-        /* 0021A7E8 */ addiu	$v0,$v0,19560
-        /* 0021A7EC */ nop
-L_0021A7F0:
-        /* 0021A7F0 */ lui	$v0,0x3f
-        /* 0021A7F4 */ sll	$v1,$s1,0x3
-        /* 0021A7F8 */ addiu	$v0,$v0,19576
-L_0021A7FC:
-        /* 0021A7FC */ addu	$a1,$v1,$v0
-        /* 0021A800 */ move	$v1,$a1
-        /* 0021A804 */ lw	$v0,4($a1)
-        /* 0021A808 */ lw	$a0,0($v1)
-        /* 0021A80C */ sw	$v0,20($sp)
-        /* 0021A810 */ sw	$a0,16($sp)
-        /* 0021A814 */ lw	$a1,16($sp)
-        /* 0021A818 */ li	$v0,300
-        /* 0021A81C */ move	$a0,$s4
-        /* 0021A820 */ li	$a2,2
-        /* 0021A824 */ li	$a3,2
-        /* 0021A828 */ li	$t0,159
-        /* 0021A82C */ li	$t1,99
-        /* 0021A830 */ li	$t2,162
-        /* 0021A834 */ li	$t3,240
-        /* 0021A838 */ jal	0x2078f0
-        /* 0021A83C */ sw	$v0,0($sp)
-        /* 0021A840 */ li	$v0,301
-        /* 0021A844 */ lw	$a1,20($sp)
-        /* 0021A848 */ move	$a0,$s4
-        /* 0021A84C */ li	$a2,2
-        /* 0021A850 */ li	$a3,2
-        /* 0021A854 */ li	$t0,327
-        /* 0021A858 */ li	$t1,99
-        /* 0021A85C */ li	$t2,162
-        /* 0021A860 */ li	$t3,408
-        /* 0021A864 */ jal	0x2078f0
-        /* 0021A868 */ sw	$v0,0($sp)
-        /* 0021A86C */ lui	$v0,0x3f
-        /* 0021A870 */ li	$a0,2
-        /* 0021A874 */ lw	$v1,13496($v0)
-        /* 0021A878 */ lw	$v0,11556($fp)
-        /* 0021A87C */ bne	$v0,$a0,L_0021A898
-        /* 0021A880 */ lw	$s1,8($v1)
-        /* 0021A884 */ lui	$v0,0x3f
-        /* 0021A888 */ sll	$v1,$s1,0x3
-        /* 0021A88C */ b	L_0021A8A4
-        /* 0021A890 */ addiu	$v0,$v0,19560
-        /* 0021A894 */ nop
-L_0021A898:
-        /* 0021A898 */ lui	$v0,0x3f
-        /* 0021A89C */ sll	$v1,$s1,0x3
-        /* 0021A8A0 */ addiu	$v0,$v0,19576
-L_0021A8A4:
-        /* 0021A8A4 */ addu	$a1,$v1,$v0
-        /* 0021A8A8 */ move	$v1,$a1
-        /* 0021A8AC */ lw	$v0,4($a1)
-        /* 0021A8B0 */ lw	$a0,0($v1)
-        /* 0021A8B4 */ sw	$v0,20($sp)
-        /* 0021A8B8 */ sw	$a0,16($sp)
-        /* 0021A8BC */ lw	$a1,16($sp)
-        /* 0021A8C0 */ li	$v0,304
-        /* 0021A8C4 */ move	$a0,$s4
-        /* 0021A8C8 */ li	$a2,2
-        /* 0021A8CC */ li	$a3,2
-        /* 0021A8D0 */ li	$t0,159
-        /* 0021A8D4 */ li	$t1,127
-        /* 0021A8D8 */ li	$t2,162
-        /* 0021A8DC */ li	$t3,240
-        /* 0021A8E0 */ jal	0x2078f0
-        /* 0021A8E4 */ sw	$v0,0($sp)
-        /* 0021A8E8 */ li	$v0,305
-        /* 0021A8EC */ lw	$a1,20($sp)
-        /* 0021A8F0 */ move	$a0,$s4
-        /* 0021A8F4 */ li	$a2,2
-        /* 0021A8F8 */ li	$a3,2
-        /* 0021A8FC */ li	$t0,327
-        /* 0021A900 */ li	$t1,127
-        /* 0021A904 */ li	$t2,162
-        /* 0021A908 */ li	$t3,408
-        /* 0021A90C */ jal	0x2078f0
-        /* 0021A910 */ sw	$v0,0($sp)
-        /* 0021A914 */ lui	$v0,0x3f
-        /* 0021A918 */ li	$a0,3
-        /* 0021A91C */ lw	$v1,13496($v0)
-        /* 0021A920 */ lw	$v0,11556($fp)
-        /* 0021A924 */ bne	$v0,$a0,L_0021A940
-        /* 0021A928 */ lw	$s1,16($v1)
-        /* 0021A92C */ lui	$v0,0x3f
-        /* 0021A930 */ sll	$v1,$s1,0x3
-        /* 0021A934 */ b	L_0021A94C
-        /* 0021A938 */ addiu	$v0,$v0,19560
-        /* 0021A93C */ nop
-L_0021A940:
-        /* 0021A940 */ lui	$v0,0x3f
-        /* 0021A944 */ sll	$v1,$s1,0x3
-        /* 0021A948 */ addiu	$v0,$v0,19576
-L_0021A94C:
-        /* 0021A94C */ addu	$a1,$v1,$v0
-        /* 0021A950 */ move	$v1,$a1
-        /* 0021A954 */ lw	$v0,4($a1)
-        /* 0021A958 */ lw	$a0,0($v1)
-        /* 0021A95C */ sw	$v0,20($sp)
-        /* 0021A960 */ sw	$a0,16($sp)
-        /* 0021A964 */ lw	$a1,16($sp)
-        /* 0021A968 */ li	$v0,312
-        /* 0021A96C */ move	$a0,$s4
-        /* 0021A970 */ li	$a2,2
-        /* 0021A974 */ li	$a3,2
-        /* 0021A978 */ li	$t0,159
-        /* 0021A97C */ li	$t1,155
-        /* 0021A980 */ li	$t2,162
-        /* 0021A984 */ li	$t3,240
-        /* 0021A988 */ jal	0x2078f0
-        /* 0021A98C */ sw	$v0,0($sp)
-        /* 0021A990 */ li	$v0,313
-        /* 0021A994 */ lw	$a1,20($sp)
-        /* 0021A998 */ move	$a0,$s4
-        /* 0021A99C */ li	$a2,2
-        /* 0021A9A0 */ li	$a3,2
-        /* 0021A9A4 */ li	$t0,327
-        /* 0021A9A8 */ li	$t1,155
-        /* 0021A9AC */ li	$t2,162
-        /* 0021A9B0 */ li	$t3,408
-        /* 0021A9B4 */ jal	0x2078f0
-        /* 0021A9B8 */ sw	$v0,0($sp)
-        /* 0021A9BC */ lui	$v0,0x3f
-        /* 0021A9C0 */ li	$a0,4
-        /* 0021A9C4 */ lw	$v1,13496($v0)
-        /* 0021A9C8 */ lw	$v0,11556($fp)
-        /* 0021A9CC */ bne	$v0,$a0,L_0021A9E8
-        /* 0021A9D0 */ lw	$s1,20($v1)
-        /* 0021A9D4 */ lui	$v0,0x3f
-        /* 0021A9D8 */ sll	$v1,$s1,0x3
-        /* 0021A9DC */ b	L_0021A9F4
-        /* 0021A9E0 */ addiu	$v0,$v0,19560
-        /* 0021A9E4 */ nop
-L_0021A9E8:
-        /* 0021A9E8 */ lui	$v0,0x3f
-        /* 0021A9EC */ sll	$v1,$s1,0x3
-        /* 0021A9F0 */ addiu	$v0,$v0,19576
-L_0021A9F4:
-        /* 0021A9F4 */ addu	$a1,$v1,$v0
-        /* 0021A9F8 */ move	$v1,$a1
-        /* 0021A9FC */ lw	$v0,4($a1)
-        /* 0021AA00 */ lw	$a0,0($v1)
-        /* 0021AA04 */ sw	$v0,20($sp)
-        /* 0021AA08 */ sw	$a0,16($sp)
-        /* 0021AA0C */ lw	$a1,16($sp)
-        /* 0021AA10 */ li	$v0,316
-        /* 0021AA14 */ move	$a0,$s4
-        /* 0021AA18 */ li	$a2,2
-        /* 0021AA1C */ li	$a3,2
-        /* 0021AA20 */ li	$t0,159
-        /* 0021AA24 */ li	$t1,183
-        /* 0021AA28 */ li	$t2,162
-        /* 0021AA2C */ li	$t3,240
-        /* 0021AA30 */ jal	0x2078f0
-        /* 0021AA34 */ sw	$v0,0($sp)
-        /* 0021AA38 */ li	$v0,317
-        /* 0021AA3C */ lw	$a1,20($sp)
-        /* 0021AA40 */ move	$a0,$s4
-        /* 0021AA44 */ li	$a2,2
-        /* 0021AA48 */ li	$a3,2
-        /* 0021AA4C */ li	$t0,327
-        /* 0021AA50 */ li	$t1,183
-        /* 0021AA54 */ li	$t2,162
-        /* 0021AA58 */ li	$t3,408
-        /* 0021AA5C */ jal	0x2078f0
-        /* 0021AA60 */ sw	$v0,0($sp)
-        /* 0021AA64 */ lui	$v0,0x3f
-        /* 0021AA68 */ li	$a0,5
-        /* 0021AA6C */ lw	$v1,13496($v0)
-        /* 0021AA70 */ lw	$v0,11556($fp)
-        /* 0021AA74 */ bne	$v0,$a0,L_0021AA90
-        /* 0021AA78 */ lw	$s1,24($v1)
-        /* 0021AA7C */ lui	$v0,0x3f
-        /* 0021AA80 */ sll	$v1,$s1,0x3
-        /* 0021AA84 */ b	L_0021AA9C
-        /* 0021AA88 */ addiu	$v0,$v0,19560
-        /* 0021AA8C */ nop
-L_0021AA90:
-        /* 0021AA90 */ lui	$v0,0x3f
-        /* 0021AA94 */ sll	$v1,$s1,0x3
-        /* 0021AA98 */ addiu	$v0,$v0,19576
-L_0021AA9C:
-        /* 0021AA9C */ addu	$a1,$v1,$v0
-        /* 0021AAA0 */ move	$v1,$a1
-        /* 0021AAA4 */ lw	$v0,4($a1)
-        /* 0021AAA8 */ lw	$a0,0($v1)
-        /* 0021AAAC */ sw	$v0,20($sp)
-        /* 0021AAB0 */ sw	$a0,16($sp)
-        /* 0021AAB4 */ lw	$a1,16($sp)
-        /* 0021AAB8 */ li	$v0,452
-        /* 0021AABC */ move	$a0,$s4
-        /* 0021AAC0 */ li	$a2,2
-        /* 0021AAC4 */ li	$a3,2
-        /* 0021AAC8 */ li	$t0,159
-        /* 0021AACC */ li	$t1,211
-        /* 0021AAD0 */ li	$t2,162
-        /* 0021AAD4 */ li	$t3,240
-        /* 0021AAD8 */ jal	0x2078f0
-        /* 0021AADC */ sw	$v0,0($sp)
-        /* 0021AAE0 */ li	$v0,453
-        /* 0021AAE4 */ lw	$a1,20($sp)
-        /* 0021AAE8 */ move	$a0,$s4
-        /* 0021AAEC */ li	$a2,2
-        /* 0021AAF0 */ li	$a3,2
-        /* 0021AAF4 */ li	$t0,327
-        /* 0021AAF8 */ li	$t1,211
-        /* 0021AAFC */ li	$t2,162
-        /* 0021AB00 */ li	$t3,408
-        /* 0021AB04 */ jal	0x2078f0
-        /* 0021AB08 */ sw	$v0,0($sp)
-        /* 0021AB0C */ lui	$v0,0x3f
-        /* 0021AB10 */ li	$a0,6
-        /* 0021AB14 */ lw	$v1,13496($v0)
-        /* 0021AB18 */ lw	$v0,11556($fp)
-        /* 0021AB1C */ bne	$v0,$a0,L_0021AB30
-        /* 0021AB20 */ lw	$s1,44($v1)
-        /* 0021AB24 */ lui	$v0,0x3f
-        /* 0021AB28 */ b	L_0021AB38
-        /* 0021AB2C */ lw	$v1,19560($v0)
-L_0021AB30:
-        /* 0021AB30 */ lui	$v0,0x3f
-        /* 0021AB34 */ lw	$v1,19576($v0)
-L_0021AB38:
-        /* 0021AB38 */ sw	$v1,16($sp)
-        /* 0021AB3C */ sll	$v0,$s1,0x2
-        /* 0021AB40 */ lw	$a1,16($sp)
-        /* 0021AB44 */ lui	$v1,0x3f
-        /* 0021AB48 */ addu	$v1,$v1,$v0
-        /* 0021AB4C */ lw	$v1,19544($v1)
-        /* 0021AB50 */ move	$a0,$s4
-        /* 0021AB54 */ li	$a2,2
-        /* 0021AB58 */ li	$a3,2
-        /* 0021AB5C */ li	$t0,159
-        /* 0021AB60 */ li	$t1,239
-        /* 0021AB64 */ li	$t2,330
-        /* 0021AB68 */ li	$t3,324
-        /* 0021AB6C */ jal	0x2078f0
-        /* 0021AB70 */ sw	$v1,0($sp)
+
+L_done_rendering_rows:
+        /* 0021A70C */ addiu	$s2,$s2,1
+        /* 0021A718 */ slti	$v0,$s2,8
+        /* 0021A71C */ bnezl	$v0,L_0021A650
+        # Get relative selected row index
+        lw   $v0,0xd2($s4)
         /* 0021AB74 */ lw	$v1,11556($fp)
         /* 0021AB78 */ slti	$v0,$v1,5
         /* 0021AB7C */ beqz	$v0,L_epilogue
         /* 0021AB80 */ ld	$s0,48($sp)
-        /* 0021AB84 */ sll	$v0,$v1,0x3
+        # Get relative selected row index
+        lw   $v0,0xd2($s4)
+        sll  $v0,$v0,16
+        sra  $v0,$v0,20
+        sll  $t0,$v0,0x3
         /* 0021AB88 */ move	$a0,$v1
-        /* 0021AB8C */ subu	$v0,$v0,$v1
+        # Fix y_coord calculation after above changes
+        subu $v0,$t0,$v0
         /* 0021AB90 */ sll	$v0,$v0,0x2
         /* 0021AB94 */ jal	0x219158
         /* 0021AB98 */ addiu	$s3,$v0,78
@@ -892,3 +727,188 @@ config_options_confirm_switch_table:
         .word   L_confirm_case_5_sound
         .word   L_confirm_case_6_error
         .word   L_confirm_case_7_accept_close
+config_options_row_value_counts:
+        .word   2
+        .word   2
+        .word   2
+        .word   2
+        .word   2
+        .word   2
+        .word   1
+        .word   0
+        .word   0
+        .word   1
+        .word   2
+        .word   2
+        .word   1
+        .word   0
+        .word   0
+        .word   1
+        .word   2
+        .word   2
+        .word   1
+        .word   0
+        .word   0
+        .word   1
+        .word   2
+        .word   2
+        .word   1
+        .word   0
+        .word   0
+        .word   1
+        .word   2
+        .word   2
+        .word   1
+        .word   0
+        .word   0
+        .word   1
+        .word   2
+        .word   2
+        .word   1
+        .word   0
+        .word   0
+        .word   1
+        .word   2
+        .word   2
+        .word   1
+        .word   0
+        .word   0
+        .word   1
+        .word   2
+        .word   2
+config_options_row_value_text_ids:
+        .word   295
+        .word   296
+        .word   300
+        .word   301
+        .word   304
+        .word   305
+        .word   312
+        .word   313
+        .word   316
+        .word   317
+        .word   452
+        .word   453
+        .word   0
+        .word   0
+        .word   0
+        .word   0
+        .word   127
+        .word   128
+        .word   127
+        .word   128
+        .word   127
+        .word   128
+        .word   127
+        .word   128
+        .word   127
+        .word   128
+        .word   127
+        .word   128
+        .word   127
+        .word   128
+        .word   127
+        .word   128
+        .word   127
+        .word   128
+        .word   127
+        .word   128
+        .word   127
+        .word   128
+        .word   127
+        .word   128
+        .word   127
+        .word   128
+        .word   127
+        .word   128
+        .word   127
+        .word   128
+        .word   127
+        .word   128
+        .word   127
+        .word   128
+        .word   127
+        .word   128
+        .word   127
+        .word   128
+        .word   127
+        .word   128
+        .word   127
+        .word   128
+        .word   127
+        .word   128
+        .word   127
+        .word   128
+        .word   127
+        .word   128
+        .word   127
+        .word   128
+        .word   127
+        .word   128
+        .word   127
+        .word   128
+        .word   127
+        .word   128
+        .word   127
+        .word   128
+        .word   127
+        .word   128
+        .word   127
+        .word   128
+        .word   127
+        .word   128
+        .word   127
+        .word   128
+        .word   127
+        .word   128
+        .word   127
+        .word   128
+        .word   127
+        .word   128
+        .word   127
+        .word   128
+        .word   127
+        .word   128
+        .word   127
+        .word   128
+        .word   127
+        .word   128
+config_options_new_row_values:
+        .word   0
+        .word   0
+        .word   0
+        .word   0
+        .word   0
+        .word   0
+        .word   0
+        .word   0
+        .word   0
+        .word   0
+        .word   0
+        .word   0
+        .word   0
+        .word   0
+        .word   0
+        .word   0
+        .word   0
+        .word   0
+        .word   0
+        .word   0
+        .word   0
+        .word   0
+        .word   0
+        .word   0
+        .word   0
+        .word   0
+        .word   0
+        .word   0
+        .word   0
+        .word   0
+        .word   0
+        .word   0
+        .word   0
+        .word   0
+        .word   0
+        .word   0
+        .word   0
+        .word   0
