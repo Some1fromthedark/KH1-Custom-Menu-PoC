@@ -1,4 +1,8 @@
 {
+	"type": "asm",
+	"sources": [
+		"asm/main.s"
+	],
 	"hooks": [
 		{
 			"address": "0x003F4C90",

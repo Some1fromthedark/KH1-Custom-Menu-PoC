@@ -29,7 +29,6 @@ DEFAULT_ASM = ROOT / "asm" / "main.s"
 DEFAULT_CONFIG = ROOT / "configs" / "empty-config.json"
 DEFAULT_CAVE = 0x01800000
 
-obj_path = BUILD_DIR / "code_cave.o"
 elf_path = BUILD_DIR / "code_cave.elf"
 bin_path = BUILD_DIR / "code_cave.bin"
 hex_path = BUILD_DIR / "code_cave.hex"
@@ -40,6 +39,17 @@ def find_assembler() -> list[str] | None:
             return [candidate]
     return None
 
+def find_gcc():
+
+    for candidate in (
+        "ee-gcc",
+        "mips64r5900el-ps2-elf-gcc",
+        "mips64-elf-gcc",
+    ):
+        if shutil.which(candidate):
+            return candidate
+
+    return None
 
 def find_linker() -> str | None:
     for candidate in ("ee-ld", "mips64-elf-ld", "mips-linux-gnu-ld"):
@@ -62,64 +72,278 @@ def find_obj_dump() -> str | None:
     return None
 
 
-def assemble(asm_path: Path, cave_base: int) -> bytes:
-    as_bin = find_assembler()
+def compile_c(source: Path, include_dirs: list[Path]) -> Path:
+
+    gcc = find_gcc()
+
+    obj_path = BUILD_DIR / (source.stem + ".o")
+
+    command = [
+        gcc,
+        "-c",
+        "-O2",
+        "-G0",
+        "-march=r5900",
+        "-ffreestanding",
+        "-fno-builtin",
+        "-o",
+        str(obj_path),
+        str(source),
+    ]
+
+    for include in include_dirs:
+        command.extend(["-I", str(include)])
+
+    subprocess.run(command, check=True, capture_output=True, text=True)
+
+    return obj_path
+
+
+def link_objects(objects: list[Path], cave_base: int) -> None:
+    """
+    Link object files into a code cave ELF.
+
+    Works for both assembly and C generated objects.
+    """
+
     ld_bin = find_linker()
-    objcopy_bin = find_objcopy()
-    objdump_bin = find_obj_dump()
-    
-    if not as_bin:
+
+    if not ld_bin:
         raise RuntimeError(
-            "No MIPS assembler found (ee-as / mips64-elf-as). "
-            "Install PS2DEV or pass --bin with a prebuilt binary. "
-            "See docs/workflow.md."
+            "No linker found (ee-ld / mips64-elf-ld)."
         )
 
     BUILD_DIR.mkdir(parents=True, exist_ok=True)
 
-    as_flags = ["-O0", "-G0", "-march=r5900", "-mabi=32", "-o", str(obj_path), str(asm_path)]
-    # Some toolchains use -march=mips3 instead of r5900
-    try:
-        subprocess.run([*as_bin, *as_flags], check=True, capture_output=True, text=True)
-    except subprocess.CalledProcessError:
-        as_flags[3] = "-march=mips3"
-        result = subprocess.run([*as_bin, *as_flags], capture_output=True, text=True)
-        if result.returncode != 0:
-            sys.stderr.write(result.stdout)
-            sys.stderr.write(result.stderr)
-            raise RuntimeError(f"Assembly failed: {asm_path}")
+    ld_script = BUILD_DIR / "cave.ld"
 
-    if ld_bin and objcopy_bin:
-        ld_script = BUILD_DIR / "cave.ld"
-        ld_script.write_text(
-            f"SECTIONS {{\n  . = 0x{cave_base:08X};\n  .text : {{ *(.text*) }}\n  .data : {{ *(.data*) }}\n  .bss  : {{ *(.bss*) }}\n}}\n",
-            encoding="utf-8",
-        )
-        subprocess.run(
-            [ld_bin, "-T", str(ld_script), "-o", str(elf_path), str(obj_path)],
-            check=True,
-            capture_output=True,
-            text=True,
-        )
-        subprocess.run(
-            [objcopy_bin, "-O", "binary", str(elf_path), str(bin_path)],
-            check=True,
-            capture_output=True,
-            text=True,
-        )
-        return bin_path.read_bytes()
+    ld_script.write_text(
+        f"""
+        SECTIONS
+        {{
+            . = 0x{cave_base:08X};
 
-    # No linker: try objcopy -O binary on .o (may not work for all toolchains)
-    if objcopy_bin:
-        subprocess.run(
-            [objcopy_bin, "-O", "binary", str(obj_path), str(bin_path)],
-            check=True,
-            capture_output=True,
-            text=True,
-        )
-        return bin_path.read_bytes()
+            .text :
+            {{
+                *(.text*)
+            }}
 
-    raise RuntimeError("Assembler found but no linker/objcopy for binary extraction.")
+            .rodata :
+            {{
+                *(.rodata*)
+            }}
+
+            .data :
+            {{
+                *(.data*)
+            }}
+
+            .bss :
+            {{
+                *(.bss*)
+            }}
+        }}
+        """,
+        encoding="utf-8",
+    )
+
+    command = [
+        ld_bin,
+        "-T",
+        str(ld_script),
+        "-o",
+        str(elf_path),
+    ]
+
+    command.extend(
+        str(obj)
+        for obj in objects
+    )
+
+    result = subprocess.run(
+        command,
+        capture_output=True,
+        text=True,
+    )
+
+    if result.returncode != 0:
+        sys.stderr.write(result.stdout)
+        sys.stderr.write(result.stderr)
+
+        raise RuntimeError(
+            "Linking failed."
+        )
+
+
+def extract_binary() -> bytes:
+    """
+    Convert linked ELF into raw binary payload.
+    """
+
+    objcopy_bin = find_objcopy()
+
+    if not objcopy_bin:
+        raise RuntimeError(
+            "No objcopy found."
+        )
+
+    subprocess.run(
+        [
+            objcopy_bin,
+            "-O",
+            "binary",
+            str(elf_path),
+            str(bin_path),
+        ],
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+
+    return bin_path.read_bytes()
+
+
+def build_project(config_data: dict, cave_base: int) -> bytes:
+    """
+    Build a C project consisting of multiple source files,
+    link the resulting objects, and extract the binary.
+    """
+
+    object_files = []
+
+    include_dirs = [
+        ROOT / path
+        for path in config_data.get("include_dirs", [])
+    ]
+
+    sources = config_data.get("sources", [])
+
+    if not sources:
+        raise RuntimeError(
+            "No project sources specified."
+        )
+
+    for source in sources:
+        source_path = ROOT / source
+
+        if not source_path.exists():
+            raise RuntimeError(
+                f"C source not found: {source_path}"
+            )
+
+        if source_path.suffix.lower() != ".c":
+            raise RuntimeError(
+                f"Unsupported C project source: {source_path}"
+            )
+
+        object_files.append(
+            compile_c(
+                source_path,
+                include_dirs,
+            )
+        )
+
+    link_objects(
+        object_files,
+        cave_base,
+    )
+
+    return extract_binary()
+
+
+def build_asm(config_data: dict, cave_base: int) -> bytes:
+    """
+    Assemble one or more MIPS assembly source files,
+    link them, and extract the final binary.
+    """
+
+    as_bin = find_assembler()
+
+    if not as_bin:
+        raise RuntimeError(
+            "No MIPS assembler found "
+            "(ee-as / mips64-elf-as)."
+        )
+
+    BUILD_DIR.mkdir(parents=True, exist_ok=True)
+
+    object_files = []
+
+    sources = config_data.get("sources", [])
+
+    if not sources:
+        raise RuntimeError(
+            "No assembly sources specified."
+        )
+
+    for source in sources:
+        asm_path = ROOT / source
+
+        if not asm_path.exists():
+            raise RuntimeError(
+                f"Assembly source not found: {asm_path}"
+            )
+
+        obj_file = BUILD_DIR / (
+            asm_path.stem + ".o"
+        )
+
+        as_flags = [
+            "-O0",
+            "-G0",
+            "-march=r5900",
+            "-mabi=32",
+            "-o",
+            str(obj_file),
+            str(asm_path),
+        ]
+
+        try:
+            subprocess.run(
+                [*as_bin, *as_flags],
+                check=True,
+                capture_output=True,
+                text=True,
+            )
+
+        except subprocess.CalledProcessError:
+            # fallback for older toolchains
+            as_flags[3] = "-march=mips3"
+
+            result = subprocess.run(
+                [*as_bin, *as_flags],
+                capture_output=True,
+                text=True,
+            )
+
+            if result.returncode != 0:
+                sys.stderr.write(result.stdout)
+                sys.stderr.write(result.stderr)
+
+                raise RuntimeError(
+                    f"Assembly failed: {asm_path}"
+                )
+
+        object_files.append(obj_file)
+
+    link_objects(
+        object_files,
+        cave_base,
+    )
+
+    return extract_binary()
+    
+
+def build_target(config_data: dict, cave_base: int) -> bytes:
+    project_type = config_data.get("type", "asm")
+
+    if project_type == "asm":
+        return build_asm(config_data, cave_base)
+
+    if project_type == "c":
+        return build_project(config_data, cave_base)
+
+    raise RuntimeError(f"Unknown project type '{project_type}'.")
 
 
 def encode_extended_addr(address: int, width_bytes: int) -> str:
@@ -238,7 +462,6 @@ def load_patches(config_data) -> list[str]:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Build BD3FB233 PNACH from EE assembly.")
-    parser.add_argument("--asm", type=Path, default=DEFAULT_ASM, help="Main assembly source")
     parser.add_argument("--bin", type=Path, help="Use prebuilt binary instead of assembling")
     parser.add_argument(
         "--config",
@@ -261,10 +484,7 @@ def main() -> int:
     if args.bin:
         data = args.bin.read_bytes()
     else:
-        if not args.asm.is_file():
-            print(f"Assembly file not found: {args.asm}", file=sys.stderr)
-            return 1
-        data = assemble(args.asm, cave_base)
+        data = build_target(config_data, cave_base)
 
     BUILD_DIR.mkdir(parents=True, exist_ok=True)
     bin_path.write_bytes(data)

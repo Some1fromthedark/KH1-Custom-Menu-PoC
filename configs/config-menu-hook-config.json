@@ -1,5 +1,6 @@
 {
-	"source": "asm/main.s",
+	"type": "c",
+	"sources": ["src/simple_config_poc/main.c"],
 	"hooks": [
 		{
 			"address": "0x003F4C90",
