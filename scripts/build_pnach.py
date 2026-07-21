@@ -24,8 +24,7 @@ BUILD_DIR = ROOT / "build"
 PATCHES_DIR = ROOT / "patches"
 
 GAME_CRC = "BD3FB233"
-GAME_TITLE = "Kingdom Hearts Final Mix [English Patched] (BD3FB233)"
-DEFAULT_ASM = ROOT / "asm" / "main.s"
+GAME_TITLE = f"Kingdom Hearts Final Mix [English Patched] ({GAME_CRC})"
 DEFAULT_CONFIG = ROOT / "configs" / "empty-config.json"
 DEFAULT_CAVE = 0x01800000
 
